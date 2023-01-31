@@ -1,9 +1,9 @@
-name: assignment_1_test
+name: assignment1_test
 
 on:
   pull_request:
     branches:
-      - 'assignment_1/'
+      - 'assignment1/'
 
 jobs:
   tests:
