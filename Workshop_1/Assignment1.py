@@ -12,8 +12,8 @@ def square(x):
         y = 25
     """
 
-    # Code Here
-    return None
+    y = x**2
+    return y
 
 
 def word_is_palindrome(string):
