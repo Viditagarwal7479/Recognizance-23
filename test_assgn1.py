@@ -1,5 +1,5 @@
 import unittest
-import Assignment1 
+import Workshop_1.Assignment1 as Assignment1
 import numpy as np
 
 class TestAssignment1(unittest.TestCase):
