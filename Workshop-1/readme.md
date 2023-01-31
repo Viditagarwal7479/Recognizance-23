@@ -1,7 +1,14 @@
 # Introductory Workshop and Python
 
+### How to submit your solution to assignment?
+- Step 1: Fork this repository
+- Step 2: Complete the incomplete code in [Assignment1.py](./Assignment1.py)
+- Step 3: After completing them create a pull request in the *`assignment1`* branch of this repository i.e., from which you forked your repository.
+- Step 4: Automatically your code submitted via pull request will be evaluated.
+- Step 5: Rest a video regarding this will be shared in the Recognizance'23 WhatsApp group which you could join after registering for the event at https://prastuti.in/recognizance.
+
 ## Resources shared in workshop
-Link to Youtube Stream
+Link to YouTube Stream
 [![Workshop 1 YoutubeStream](https://img.youtube.com/vi/2tVymKvntbg/sddefault.jpg)](https://www.youtube.com/live/2tVymKvntbg)
 
 [Link to Google Colab Notebook used during workshop](https://colab.research.google.com/drive/1gM_7jdHN7qKcCyD2ElTbZVnSxL8ghfeJ#scrollTo=LOs-sbNpvpan)
