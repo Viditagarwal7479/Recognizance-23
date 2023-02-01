@@ -3,7 +3,7 @@ name: assignment1_test
 on:
   pull_request:
     branches:
-      - 'assignment1/'
+      - assignment1
 
 jobs:
   tests:
@@ -23,4 +23,4 @@ jobs:
           python3 -m pip install pytest wheel
           if [ -f requirements.txt ]; then python3 -m pip install -r requirements.txt; fi
       - name: Assignment_1_check
-        run: chmod +x .\test_assgn1.py & python3 .\test_assgn1.py
+        run: chmod +x ./test_assgn1.py & python3 ./test_assgn1.py
