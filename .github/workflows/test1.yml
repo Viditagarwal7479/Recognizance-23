@@ -7,7 +7,7 @@ on:
 
 jobs:
   tests:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -21,6 +21,6 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install pytest wheel
-          if [ -f requirements.txt ]; then python3 -m pip install -r requirements.txt; fi
+          python3 -m pip install -r requirements.txt
       - name: Assignment_1_check
         run: chmod +x ./test_assgn1.py & python3 ./test_assgn1.py
