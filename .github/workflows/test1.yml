@@ -3,7 +3,7 @@ name: assignment1_test
 on:
   pull_request:
     branches:
-    - assignment1/
+    - assignment1
 
 jobs:
   tests:
