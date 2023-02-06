@@ -163,16 +163,10 @@ def swap_case(string):
 
 
 def is_prime(num):
-    """
-    This function returns True if the number is prime
-    args:
-        num (int)
-    returns:
-        flag (bool)
-    """
-
-    # Code Here
-    return None
+  for i in range(2,num):
+    if (num%i) == 0:
+      return False
+  return True
 
 
 def is_leap_year(year):
