@@ -13,7 +13,8 @@ def square(x):
     """
 
     # Code Here
-    return None
+    num=x**2
+    return num
 
 
 def word_is_palindrome(string):
@@ -31,7 +32,13 @@ def word_is_palindrome(string):
     """
 
     # Code Here
-    return None
+    sz=len(string)
+    
+    chk=True
+    for i in range(sz//2):
+        if string[i]!=string[sz-i-1]:
+            chk=False
+    return chk
 
 
 def sqrt_of_numbers(num):
