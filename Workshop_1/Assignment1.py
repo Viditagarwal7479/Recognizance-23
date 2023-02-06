@@ -98,7 +98,23 @@ def even_sort(arr):
     """
 
     # Code Here
-    return None
+    odd=[]
+    even=[]
+    n=len(arr)
+    for x in arr:
+        if x%2==0:
+            even.append(x)
+        else:
+            odd.append(x)
+    odd.sort()
+    even.sort()
+    sz=len(even)
+    for i in range(sz):
+        arr[i]=even[i]
+    for i in range(sz, n):
+        arr[i]=odd[i-sz]
+    
+    return arr
 
 
 def eqn_solver(A, B, C):
