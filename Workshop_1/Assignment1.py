@@ -157,7 +157,9 @@ def swap_case(string):
     """
 
     # Code Here
-    return None
+    string=string.swapcase()
+    return string
+
 
 
 def is_prime(num):
