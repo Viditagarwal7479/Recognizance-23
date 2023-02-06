@@ -74,7 +74,9 @@ def Maximum(arr):
     """
 
     # Code Here
-    return None, None
+    arr.sort(reverse=True)
+    return arr[0], arr[1]
+
 
 
 def even_sort(arr):
