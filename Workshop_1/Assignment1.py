@@ -52,11 +52,15 @@ def sqrt_of_numbers(num):
         ## then
         sqroot = 5.20
     """
-    if num < 0:
-        raise ValueError('Number must be positive')
+    
 
     # Code Here
-    return None
+    import math
+    if num > 0:
+        res=math.sqrt(num)
+        return round(res, 2) 
+    else:
+        raise ValueError('Number must be positive')
 
 
 def Maximum(arr):
