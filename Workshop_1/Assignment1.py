@@ -135,7 +135,12 @@ def eqn_solver(A, B, C):
     """
 
     # Code Here
-    return None, None
+    yn=((A[1]*C[0])-(C[1]*A[0]))
+    yd=((A[1]*B[0])-(B[1]*A[0]))
+    y=float(yn/yd)
+    x=float((C[0]-(B[0]*y))/A[0])
+    return  x, y
+
 
 
 def swap_case(string):
