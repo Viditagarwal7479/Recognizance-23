@@ -33,7 +33,6 @@ def word_is_palindrome(string):
 
     # Code Here
     sz=len(string)
-    
     chk=True
     for i in range(sz//2):
         if string[i]!=string[sz-i-1]:
