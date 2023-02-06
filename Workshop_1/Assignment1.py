@@ -196,7 +196,15 @@ def is_perfect_square(num):
     """
 
     # Code Here
-    return None
+    import math
+    x=math.sqrt(num)
+    x=int(x)
+    y=x*x
+    if num==y:
+        return True
+    else:
+        return False
+
 
 
 def is_perfect_number(num):
