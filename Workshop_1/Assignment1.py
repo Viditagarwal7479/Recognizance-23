@@ -244,7 +244,16 @@ def resize_array(a):
     """
 
     # Code Here
-    return None
+    l=[]
+    m=[]
+    n=[]
+    for i in range(3):
+        l.append(a[i])
+    for i in range(3,6):
+        m.append(a[i])
+    n.append(l)
+    n.append(m)
+    return n
 
 
 def reverse_step_array(a):
