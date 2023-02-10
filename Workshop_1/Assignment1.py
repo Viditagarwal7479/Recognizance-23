@@ -96,7 +96,7 @@ def even_sort(arr):
 
     # Code Here
     even=[]
-    odd[]
+    odd=[]
     for i in arr:
         if i%2==0:
             even.append(i)
@@ -278,7 +278,12 @@ def reverse_step_array(a):
     """
 
     # Code Here
-    return None
+    b=[]
+    b1=np.flip(a)
+    for i in np.nditer(b1[::3]):
+        b.append(i)
+    c=np.array(b)
+    return c
 
 
 def reverse_words(string):
@@ -295,7 +300,17 @@ def reverse_words(string):
     """
 
     # Code Here
-    return None
+    s=""
+    ss=""
+    for i in string:
+        if i==' ':
+            s=ss+s+' ' 
+            ss=""
+        else :
+            ss=ss+i
+    s=ss+s
+        
+    return s
 
 
 def count_characters(string):
@@ -312,7 +327,16 @@ def count_characters(string):
     """
 
     # Code Here
-    return None
+    dict={}
+    for i in string:
+        if i!=' ':
+            if i in dict.keys():
+                dict[i]=dict[i]+1
+            else:
+                dict[i]=1
+        
+    
+    return dict
 
 
 def remove_special_characters(string):
@@ -329,7 +353,12 @@ def remove_special_characters(string):
     """
 
     # Code Here
-    return None
+    str=""
+    for i in string:
+        if ((int(i)>64) and (int(i)<91)) or ((int(i)>96) and (int(i)<123)) or ((int(i)>47)&&(int(i)<58)) or i==' ':
+            str=str+i
+            
+    return str
 
 
 def sort_tuple_of_tuples(input_tuple):
@@ -346,7 +375,8 @@ def sort_tuple_of_tuples(input_tuple):
     """
 
     # Code Here
-    return None
+    input_tuple.sort(key=lambda x:x[1])
+    return input_tuple
 
 
 def alpha_numeric_words(string):
@@ -363,6 +393,25 @@ def alpha_numeric_words(string):
     """
 
     # Code Here
+    ss=""
+    s=""
+    a=0
+    n=0
+    for i in string:
+        if i==' ':
+            if n>0 and a>0:
+                s=s+ss+' ' 
+            n=0
+            a=0
+            ss=""
+        else:
+            ss=ss+i
+            if ((int(i)>64) and (int(i)<91)) or ((int(i)>96) and (int(i)<123)):
+                a++
+            if (int(i)>47) and (int(i)<58):
+                n++
+    if n>0 and a>0:
+        s=s+ss
     return None
 
 
@@ -380,7 +429,18 @@ def count_them_all(string):
     """
 
     # Code Here
-    return None
+    a=0
+    n=0
+    s=0
+    for i in string:
+        if ((int(i)>64) and (int(i)<91)) or ((int(i)>96) and (int(i)<123)):
+            a++
+        elif (int(i)>47) and (int(i)<58):
+            n++
+        else:
+            s++
+    dict={'Characters': a, 'Numbers': n, 'Symbols': s}
+    return dict
 
 
 def hash_supremacy(string):
@@ -397,4 +457,10 @@ def hash_supremacy(string):
     """
 
     # Code Here
-    return None
+    s=""
+    for i in string:
+        if ((int(i)>64) and (int(i)<91)) or ((int(i)>96) and (int(i)<123)) or ((int(i)>47)&&(int(i)<58)) or i==' ':
+            s=s+i
+        else:
+            s=s+'#'
+    return s
