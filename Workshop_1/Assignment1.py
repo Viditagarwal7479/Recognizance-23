@@ -31,7 +31,13 @@ def word_is_palindrome(string):
     """
 
     # Code Here
-    return None
+    flag=false
+    str=""
+    for i in string:
+        str=i+str
+    if str==string :
+        flag=true
+    return flag
 
 
 def sqrt_of_numbers(num):
@@ -50,7 +56,9 @@ def sqrt_of_numbers(num):
         raise ValueError('Number must be positive')
 
     # Code Here
-    return None
+    a=math.sqrt(num)
+    
+    return round(a,2)
 
 
 def Maximum(arr):
@@ -68,7 +76,8 @@ def Maximum(arr):
     """
 
     # Code Here
-    return None, None
+    arr.sort()
+    return arr[-1], arr[-2]
 
 
 def even_sort(arr):
@@ -86,7 +95,21 @@ def even_sort(arr):
     """
 
     # Code Here
-    return None
+    even=[]
+    odd[]
+    for i in arr:
+        if i%2==0:
+            even.append(i)
+        else:
+            odd.append(i)
+    even.sort()
+    odd.sort()
+    arr=[]
+    for i in even:
+        arr.append(i)
+    for i in odd:
+        arr.append(i)
+    return arr
 
 
 def eqn_solver(A, B, C):
@@ -107,7 +130,9 @@ def eqn_solver(A, B, C):
     """
 
     # Code Here
-    return None, None
+    y=float(C[1]-(float(A[1]/A[0]))*C[0])/(B[1]-(float(A[1]/A[0]))*B[0])
+    x=float((C[1]-B[1]*y)/A[1])
+    return x, y
 
 
 def swap_case(string):
@@ -124,7 +149,18 @@ def swap_case(string):
     """
 
     # Code Here
-    return None
+    str=""
+    for i in string:
+        a=int(i)
+        if a>64 and a<91:
+            a=a+32
+            str=str+char(a)
+        elif a>96 and a<123:
+            a=a-32;
+            str=str+char(a)
+        else:
+            str=str+i;
+    return str
 
 
 def is_prime(num):
@@ -137,7 +173,11 @@ def is_prime(num):
     """
 
     # Code Here
-    return None
+    flag=true
+    for i in range(2,num):
+        if num%i==0:
+            flag=false
+    return flag
 
 
 def is_leap_year(year):
@@ -150,7 +190,13 @@ def is_leap_year(year):
     """
 
     # Code Here
-    return None
+    flag=false
+    if year%100==0 and year%400==0:
+        flag=true
+    elif year%4==0 and year%100!=0:
+        flag=true
+       
+    return flag
 
 
 def is_perfect_square(num):
@@ -163,7 +209,11 @@ def is_perfect_square(num):
     """
 
     # Code Here
-    return None
+    flag=false
+    a=int(math.sqrt(num))
+    if a==(math.sqrt(num)):
+        flag=true
+    return flag
 
 
 def is_perfect_number(num):
@@ -186,7 +236,14 @@ def is_perfect_number(num):
     """
 
     # Code Here
-    return None
+    s=0
+    flag=false
+    for i in range(1,num):
+        if num%i==0:
+            s=s+i
+    if s==num:
+        flag=true
+    return flag
 
 
 def resize_array(a):
@@ -203,7 +260,8 @@ def resize_array(a):
     """
 
     # Code Here
-    return None
+    b=a.resize(2,3)
+    return b
 
 
 def reverse_step_array(a):
