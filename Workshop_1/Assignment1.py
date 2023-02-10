@@ -407,9 +407,9 @@ def alpha_numeric_words(string):
         else:
             ss=ss+i
             if ((int(i)>64) and (int(i)<91)) or ((int(i)>96) and (int(i)<123)):
-                a++
+                a+=1
             if (int(i)>47) and (int(i)<58):
-                n++
+                n+=1
     if n>0 and a>0:
         s=s+ss
     return None
@@ -434,11 +434,11 @@ def count_them_all(string):
     s=0
     for i in string:
         if ((int(i)>64) and (int(i)<91)) or ((int(i)>96) and (int(i)<123)):
-            a++
+            a+=1
         elif (int(i)>47) and (int(i)<58):
-            n++
+            n+=1
         else:
-            s++
+            s+=1
     dict={'Characters': a, 'Numbers': n, 'Symbols': s}
     return dict
 
