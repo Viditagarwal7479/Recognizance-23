@@ -459,7 +459,7 @@ def hash_supremacy(string):
     # Code Here
     s=""
     for i in string:
-        if ((int(i)>64) and (int(i)<91)) or ((int(i)>96) and (int(i)<123)) or ((int(i)>47)&&(int(i)<58)) or i==' ':
+        if ((int(i)>64) and (int(i)<91)) or ((int(i)>96) and (int(i)<123)) or ((int(i)>47) and (int(i)<58)) or i==' ':
             s=s+i
         else:
             s=s+'#'
