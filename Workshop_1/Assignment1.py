@@ -31,12 +31,12 @@ def word_is_palindrome(string):
     """
 
     # Code Here
-    flag=false
-    str=""
+    flag = False
+    str = ""
     for i in string:
-        str=i+str
-    if str==string :
-        flag=true
+        str = i+str
+    if str == string:
+        flag = True
     return flag
 
 
@@ -56,9 +56,9 @@ def sqrt_of_numbers(num):
         raise ValueError('Number must be positive')
 
     # Code Here
-    a=math.sqrt(num)
-    
-    return round(a,2)
+    a = np.sqrt(num)
+
+    return round(a, 2)
 
 
 def Maximum(arr):
@@ -95,16 +95,16 @@ def even_sort(arr):
     """
 
     # Code Here
-    even=[]
-    odd=[]
+    even = []
+    odd = []
     for i in arr:
-        if i%2==0:
+        if i % 2 == 0:
             even.append(i)
         else:
             odd.append(i)
     even.sort()
     odd.sort()
-    arr=[]
+    arr = []
     for i in even:
         arr.append(i)
     for i in odd:
@@ -130,8 +130,8 @@ def eqn_solver(A, B, C):
     """
 
     # Code Here
-    y=float(C[1]-(float(A[1]/A[0]))*C[0])/(B[1]-(float(A[1]/A[0]))*B[0])
-    x=float((C[1]-B[1]*y)/A[1])
+    y = float(C[1]-(float(A[1]/A[0]))*C[0])/(B[1]-(float(A[1]/A[0]))*B[0])
+    x = float((C[1]-B[1]*y)/A[1])
     return x, y
 
 
@@ -149,17 +149,17 @@ def swap_case(string):
     """
 
     # Code Here
-    str=""
+    str = ""
     for i in string:
-        a=int(i)
-        if a>64 and a<91:
-            a=a+32
-            str=str+char(a)
-        elif a>96 and a<123:
-            a=a-32;
-            str=str+char(a)
+        a = ord(i)
+        if a > 64 and a < 91:
+            a = a+32
+            str = str+chr(a)
+        elif a > 96 and a < 123:
+            a = a-32
+            str = str+chr(a)
         else:
-            str=str+i;
+            str = str+i
     return str
 
 
@@ -173,10 +173,10 @@ def is_prime(num):
     """
 
     # Code Here
-    flag=true
-    for i in range(2,num):
-        if num%i==0:
-            flag=false
+    flag = True
+    for i in range(2, num):
+        if num % i == 0:
+            flag = False
     return flag
 
 
@@ -190,12 +190,12 @@ def is_leap_year(year):
     """
 
     # Code Here
-    flag=false
-    if year%100==0 and year%400==0:
-        flag=true
-    elif year%4==0 and year%100!=0:
-        flag=true
-       
+    flag = False
+    if year % 100 == 0 and year % 400 == 0:
+        flag = True
+    elif year % 4 == 0 and year % 100 != 0:
+        flag = True
+
     return flag
 
 
@@ -209,10 +209,10 @@ def is_perfect_square(num):
     """
 
     # Code Here
-    flag=false
-    a=int(math.sqrt(num))
-    if a==(math.sqrt(num)):
-        flag=true
+    flag = False
+    a = int(np.sqrt(num))
+    if a == (np.sqrt(num)):
+        flag = True
     return flag
 
 
@@ -236,13 +236,13 @@ def is_perfect_number(num):
     """
 
     # Code Here
-    s=0
-    flag=false
-    for i in range(1,num):
-        if num%i==0:
-            s=s+i
-    if s==num:
-        flag=true
+    s = 0
+    flag = False
+    for i in range(1, num):
+        if num % i == 0:
+            s = s+i
+    if s == num:
+        flag = True
     return flag
 
 
@@ -258,9 +258,9 @@ def resize_array(a):
         ## then
         b = np.array([[1, 2, 3], [4, 5, 6]])
     """
-
+    aa=np.array(a)
     # Code Here
-    b=a.resize(2,3)
+    b = aa.resize(2, 3)
     return b
 
 
@@ -278,11 +278,11 @@ def reverse_step_array(a):
     """
 
     # Code Here
-    b=[]
-    b1=np.flip(a)
+    b = []
+    b1 = np.flip(a)
     for i in np.nditer(b1[::3]):
         b.append(i)
-    c=np.array(b)
+    c = np.array(b)
     return c
 
 
@@ -300,16 +300,17 @@ def reverse_words(string):
     """
 
     # Code Here
-    s=""
-    ss=""
+    s = ""
+    ss = ""
     for i in string:
-        if i==' ':
-            s=ss+s+' ' 
-            ss=""
-        else :
-            ss=ss+i
-    s=ss+s
-        
+        if i == ' ':
+            ss=' '+ss
+            s = ss+s
+            ss = ""
+        else:
+            ss = ss+i
+    s = ss+s
+
     return s
 
 
@@ -327,15 +328,14 @@ def count_characters(string):
     """
 
     # Code Here
-    dict={}
+    dict = {}
     for i in string:
-        if i!=' ':
+        if i != ' ':
             if i in dict.keys():
-                dict[i]=dict[i]+1
+                dict[i] = dict[i]+1
             else:
-                dict[i]=1
-        
-    
+                dict[i] = 1
+
     return dict
 
 
@@ -353,11 +353,11 @@ def remove_special_characters(string):
     """
 
     # Code Here
-    str=""
+    str = ""
     for i in string:
-        if ((int(i)>64) and (int(i)<91)) or ((int(i)>96) and (int(i)<123)) or ((int(i)>47) and (int(i)<58)) or i==' ':
-            str=str+i
-            
+        if ((ord(i) > 64) and (ord(i) < 91)) or ((ord(i) > 96) and (ord(i) < 123)) or ((ord(i) > 47) and (ord(i) < 58)) or i == ' ':
+            str = str+i
+
     return str
 
 
@@ -375,7 +375,7 @@ def sort_tuple_of_tuples(input_tuple):
     """
 
     # Code Here
-    input_tuple.sort(key=lambda x:x[1])
+    input_tuple.sort(key=lambda x: x[1])
     return input_tuple
 
 
@@ -393,26 +393,26 @@ def alpha_numeric_words(string):
     """
 
     # Code Here
-    ss=""
-    s=""
-    a=0
-    n=0
+    ss = ""
+    s = ""
+    a = 0
+    n = 0
     for i in string:
-        if i==' ':
-            if n>0 and a>0:
-                s=s+ss+' ' 
-            n=0
-            a=0
-            ss=""
+        if i == ' ':
+            if n > 0 and a > 0:
+                s = s+ss+' '
+            n = 0
+            a = 0
+            ss = ""
         else:
-            ss=ss+i
-            if ((int(i)>64) and (int(i)<91)) or ((int(i)>96) and (int(i)<123)):
-                a+=1
-            if (int(i)>47) and (int(i)<58):
-                n+=1
-    if n>0 and a>0:
-        s=s+ss
-    return None
+            ss = ss+i
+            if ((ord(i) > 64) and (ord(i) < 91)) or ((ord(i) > 96) and (ord(i) < 123)):
+                a += 1
+            if (ord(i) > 47) and (ord(i) < 58):
+                n += 1
+    if n > 0 and a > 0:
+        s = s+ss
+    return s
 
 
 def count_them_all(string):
@@ -429,17 +429,18 @@ def count_them_all(string):
     """
 
     # Code Here
-    a=0
-    n=0
-    s=0
+    a = 0
+    n = 0
+    s = 0
     for i in string:
-        if ((int(i)>64) and (int(i)<91)) or ((int(i)>96) and (int(i)<123)):
-            a+=1
-        elif (int(i)>47) and (int(i)<58):
-            n+=1
+        if ((ord(i) > 64) and (ord(i) < 91)) or ((ord(i) > 96) and (ord(i) < 123)):
+            a += 1
+        elif (ord(i) > 47) and (ord(i) < 58):
+            n += 1
         else:
-            s+=1
-    dict={'Characters': a, 'Numbers': n, 'Symbols': s}
+            if i!=' ':
+                s += 1
+    dict = {'Characters': a, 'Numbers': n, 'Symbols': s}
     return dict
 
 
@@ -457,10 +458,10 @@ def hash_supremacy(string):
     """
 
     # Code Here
-    s=""
+    s = ""
     for i in string:
-        if ((int(i)>64) and (int(i)<91)) or ((int(i)>96) and (int(i)<123)) or ((int(i)>47) and (int(i)<58)) or i==' ':
-            s=s+i
+        if ((ord(i) > 64) and (ord(i) < 91)) or ((ord(i) > 96) and (ord(i) < 123)) or ((ord(i) > 47) and (ord(i) < 58)) or i == ' ':
+            s = s+i
         else:
-            s=s+'#'
+            s = s+'#'
     return s
