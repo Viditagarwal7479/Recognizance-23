@@ -208,8 +208,11 @@ def is_perfect_square(num):
         flag (bool)
     """
 
-    # Code Here
-    return None
+    if num**0.5 == (int)(num**0.5):
+        flag=True
+    else:
+        flag=False
+    return flag
 
 
 def is_perfect_number(num):
@@ -231,10 +234,14 @@ def is_perfect_number(num):
         flag = False
     """
 
-    # Code Here
-    return None
+    sum = 0
+    for x in range(1, n):
+        if n % x == 0:
+            sum += x
+    return sum == n
+    
 
-
+import numpy as np
 def resize_array(a):
     """
     This function resizes a 1D array to 2D array of size 2x3
@@ -248,8 +255,9 @@ def resize_array(a):
         b = np.array([[1, 2, 3], [4, 5, 6]])
     """
 
-    # Code Here
-    return None
+  
+    b = np.reshape(a, (2, 3))
+    return b
 
 
 def reverse_step_array(a):
@@ -264,9 +272,14 @@ def reverse_step_array(a):
         ## then
         b = np.array([9, 6, 3])
     """
-
-    # Code Here
-    return None
+    b=[]
+    rev=np.flip(a)
+    n=len(a)
+    for i in range(0,n-1):
+        if i%3==0:
+            b.append(rev[i])
+            
+    return b
 
 
 def reverse_words(string):
@@ -282,8 +295,12 @@ def reverse_words(string):
         string = 'World Again Hello'
     """
 
-    # Code Here
-    return None
+    s = string.split()[::-1]
+    l=[]
+    for i in s:
+        l.append(i)
+    String=" ".join(l)    
+    return String
 
 
 def count_characters(string):
@@ -299,8 +316,15 @@ def count_characters(string):
         dict = {'H': 1, 'e': 1, 'l': 3, 'o': 2, 'W': 1, 'r': 1, 'd': 1}
     """
 
-    # Code Here
-    return None
+    dict ={}
+    n=len(string)
+    for i in string:
+      if i!=" ":
+          dict[i]=0
+    for i in string:
+      if i!=" ":
+          dict[i]=dict[i]+1
+    return dict
 
 
 def remove_special_characters(string):
@@ -316,8 +340,12 @@ def remove_special_characters(string):
         str = 'Hello World 123 th15 1s 4 t35t str1ng'
     """
 
-    # Code Here
-    return None
+    new_string = ''
+    for i in string:
+        if i.isalnum() or i==' ':
+            new_string=new_string+i
+
+    return new_string
 
 
 def sort_tuple_of_tuples(input_tuple):
@@ -333,8 +361,16 @@ def sort_tuple_of_tuples(input_tuple):
         input_tuple: (('z', 1), ('w', 19), ('f', 37), ('a', 55))
     """
 
-    # Code Here
-    return None
+    n = len(input_tuple)
+    list1=list(input_tuple)
+    for i in range(0, n):
+        for j in range(0, (n - i - 1)):
+            if list1[j][1] > list1[j+1][1]:
+                temp = list1[j]
+                list1[j] = list1[j+1]
+                list1[j+1] = temp
+    output_tuple=tuple(list1)            
+    return output_tuple
 
 
 def alpha_numeric_words(string):
@@ -350,8 +386,13 @@ def alpha_numeric_words(string):
         string: "there33 how11 you1"
     """
 
-    # Code Here
-    return None
+    l = []
+    t= string.split()
+    for i in t:
+        if any(ch.isalpha() for ch in i) and any(ch.isdigit() for ch in i):
+            l.append(i)
+    String=" ".join(l)    
+    return String
 
 
 def count_them_all(string):
@@ -367,8 +408,15 @@ def count_them_all(string):
         dict: {'Characters': 7, 'Numbers': 4, 'Symbols': 4}
     """
 
-    # Code Here
-    return None
+    dict={'Characters': 0, 'Numbers': 0, 'Symbols': 0}
+    for i in string:
+        if i.isalpha():
+            dict['Characters']=dict['Characters']+1
+        elif i.isdigit():
+            dict['Numbers']=dict['Numbers']+1
+        else:
+            dict['Symbols']=dict['Symbols']+1
+    return dict
 
 
 def hash_supremacy(string):
@@ -383,6 +431,14 @@ def hash_supremacy(string):
         ## then
         string: "#He was a### great #guy"
     """
+    nstr='' 
+    for i in string:
+        if i.isalpha() or i.isdigit() or i==' ':
+          nstr=nstr+i
+        else:
+          nstr=nstr+"#"
 
-    # Code Here
-    return None
+                
+             
+        
+    return nstr
