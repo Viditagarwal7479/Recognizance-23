@@ -33,7 +33,7 @@ def word_is_palindrome(string):
     if string == string[::-1]:
         flag=True
     else:
-        flag==False
+        flag=False
     return flag
 
 
@@ -192,13 +192,20 @@ def is_leap_year(year):
 
     if year%4 !=0:
         flag = False
-    elif year%100 == 0 and year%400 ==0 :
-        flag = True
+     
     else:
-        flag = False
+        if year%100 !=0:
+            flag = True
+        else:
+            if year%400 ==0:
+                flag = True
+            else:
+                flag = False
+                
+                
     return flag
 
-
+import math
 def is_perfect_square(num):
     """
     This function returns True if the number is perfect square i.e. it is a square of some integer.
@@ -208,7 +215,7 @@ def is_perfect_square(num):
         flag (bool)
     """
 
-    if num**0.5 == (int)(num**0.5):
+    if num**0.5 == math.ceil(num**0.5):
         flag=True
     else:
         flag=False
@@ -235,10 +242,10 @@ def is_perfect_number(num):
     """
 
     sum = 0
-    for x in range(1, n):
-        if n % x == 0:
+    for x in range(1, num):
+        if num % x == 0:
             sum += x
-    return sum == n
+    return sum == num
     
 
 import numpy as np
@@ -414,7 +421,7 @@ def count_them_all(string):
             dict['Characters']=dict['Characters']+1
         elif i.isdigit():
             dict['Numbers']=dict['Numbers']+1
-        else:
+        elif i!=' ':
             dict['Symbols']=dict['Symbols']+1
     return dict
 
