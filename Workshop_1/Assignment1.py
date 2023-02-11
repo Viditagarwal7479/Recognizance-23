@@ -12,8 +12,8 @@ def square(x):
         y = 25
     """
 
-    # Code Here
-    return None
+    y=x**2
+    return y
 
 
 def word_is_palindrome(string):
@@ -30,8 +30,11 @@ def word_is_palindrome(string):
         flag = True
     """
 
-    # Code Here
-    return None
+    if string == string[::-1]:
+        flag=True
+    else:
+        flag==False
+    return flag
 
 
 def sqrt_of_numbers(num):
@@ -46,11 +49,12 @@ def sqrt_of_numbers(num):
         ## then
         sqroot = 5.20
     """
-    if num < 0:
+     if num < 0:
         raise ValueError('Number must be positive')
-
-    # Code Here
-    return None
+    else:
+        sqroot=num**0.5
+        return sqroot
+    
 
 
 def Maximum(arr):
@@ -66,9 +70,19 @@ def Maximum(arr):
         ## then
         Max1, Max2 = 5, 4
     """
-
-    # Code Here
-    return None, None
+ 
+    Max1 = max(arr[0], arr[1])
+    Max2 = min(arr[0], arr[1])
+    n = len(arr)
+    for i in range(2,n):
+        if arr[i] > Max1:
+            Max2 = Max1
+            Max1 = arr[i]
+        elif arr[i] > Max2 and Max1 != arr[i]:
+            Max2 = arr[i]
+        elif Max1 == Max2 and Max2 != arr[i]:
+            Max2 = arr[i]
+    return Max1, Max2
 
 
 def even_sort(arr):
@@ -85,8 +99,19 @@ def even_sort(arr):
         ## This is any even number is smaller than any odd number
     """
 
-    # Code Here
-    return None
+    sort_arr=[]
+    oArr=[]
+    for i in arr:
+        if i%2 == 0:
+            sort_arr.append(i)
+        else:
+            oArr.append(i)
+    sort_arr.sort()
+    oArr.sort()
+    for i in oArr:
+        sort_arr.append(i)
+    
+    return sort_arr
 
 
 def eqn_solver(A, B, C):
@@ -106,8 +131,9 @@ def eqn_solver(A, B, C):
         x, y (float, float)
     """
 
-    # Code Here
-    return None, None
+    x=-(B[0]C[1]-B[1]C[0])/(A[0]B[1]-A[1]B[0])
+    y=(A[0]C[1]-A[1]C[0])/(A[0]B[1]-A[1]B[0])
+    return x, y
 
 
 def swap_case(string):
@@ -123,8 +149,15 @@ def swap_case(string):
         string = 'hELLO wORLD'
     """
 
-    # Code Here
-    return None
+    STRING = ""
+    for i in string:
+        if i.upper() == i:
+          STRING+=i.lower()
+        else:
+          STRING+=i.upper()   
+        
+    
+    return STRING
 
 
 def is_prime(num):
@@ -136,8 +169,16 @@ def is_prime(num):
         flag (bool)
     """
 
-    # Code Here
-    return None
+    if num > 1:
+        for i in range(2, int(num/2)+1):
+            if (num % i) == 0:
+                flag = False
+                break
+            else:
+                flag = True
+    else:
+        flag = False
+    return flag
 
 
 def is_leap_year(year):
@@ -149,8 +190,13 @@ def is_leap_year(year):
         flag (bool)
     """
 
-    # Code Here
-    return None
+    if year%4 !=0:
+        flag = False
+    elif year%100 == 0 and year%400 ==0 :
+        flag = True
+    else:
+        flag = False
+    return flag
 
 
 def is_perfect_square(num):
