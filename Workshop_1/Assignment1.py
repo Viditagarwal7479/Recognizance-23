@@ -215,11 +215,8 @@ def is_perfect_square(num):
         flag (bool)
     """
 
-    if num**0.5 == math.ceil(num**0.5):
-        flag=True
-    else:
-        flag=False
-    return flag
+    sr = int(math.sqrt(num))
+    return ((sr*sr) == x)
 
 
 def is_perfect_number(num):
