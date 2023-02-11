@@ -49,7 +49,7 @@ def sqrt_of_numbers(num):
         ## then
         sqroot = 5.20
     """
-     if num < 0:
+    if num < 0:
         raise ValueError('Number must be positive')
     else:
         sqroot=num**0.5
