@@ -53,7 +53,7 @@ def sqrt_of_numbers(num):
         raise ValueError('Number must be positive')
     else:
         sqroot=num**0.5
-        return sqroot
+        return round(sqroot,2)
     
 
 
@@ -216,7 +216,7 @@ def is_perfect_square(num):
     """
 
     sr = int(math.sqrt(num))
-    return ((sr*sr) == x)
+    return ((sr*sr) == num)
 
 
 def is_perfect_number(num):
