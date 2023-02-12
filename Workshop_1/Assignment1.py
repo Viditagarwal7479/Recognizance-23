@@ -12,8 +12,8 @@ def square(x):
         y = 25
     """
 
-    # Code Here
-    return None
+    y=x*x
+    return y
 
 
 def word_is_palindrome(string):
@@ -30,8 +30,14 @@ def word_is_palindrome(string):
         flag = True
     """
 
-    # Code Here
-    return None
+    x=len(string) 
+    for i in (x) :
+        if string[i]==string[x-i-1]:
+            flag=true
+        else :
+            flag=false
+    
+    return flag
 
 
 def sqrt_of_numbers(num):
@@ -49,8 +55,9 @@ def sqrt_of_numbers(num):
     if num < 0:
         raise ValueError('Number must be positive')
 
-    # Code Here
-    return None
+    else :
+        return round(pow(num, 0.5), 2) 
+    
 
 
 def Maximum(arr):
@@ -67,8 +74,8 @@ def Maximum(arr):
         Max1, Max2 = 5, 4
     """
 
-    # Code Here
-    return None, None
+    arr.sort() 
+    return arr[-1],arr[-2]
 
 
 def even_sort(arr):
@@ -85,8 +92,16 @@ def even_sort(arr):
         ## This is any even number is smaller than any odd number
     """
 
-    # Code Here
-    return None
+    arr. sort() 
+    for i in range(len(arr)) :
+        for j in range(len(arr) -1-i) :
+            t =arr[j]
+            arr[j]=arr[j+1]
+            arr[j+1]=t
+    return arr
+    
+
+
 
 
 def eqn_solver(A, B, C):
@@ -106,8 +121,9 @@ def eqn_solver(A, B, C):
         x, y (float, float)
     """
 
-    # Code Here
-    return None, None
+    y=((A[0]*C[1]-C[1]*A[0]) /(A[0]*B[1]-B[1]*A[0])) 
+    x=((B[0]*C[1]-C[1]*B[0]) /(B[0]*A[1]-A[1]*B[0])) 
+    return x, y
 
 
 def swap_case(string):
