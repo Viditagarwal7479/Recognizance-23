@@ -304,7 +304,16 @@ def count_characters(string):
     """
 
     # Code Here
-    return None
+    all_freq={}
+    for i in string:
+        if i in all_freq:
+            all_freq[i]+=1
+        else :
+            all_freq[i]=1
+    if ''in all_freq  .keys():
+        del all_freq['']
+        
+    return all_freq
 
 
 def remove_special_characters(string):
@@ -321,7 +330,14 @@ def remove_special_characters(string):
     """
 
     # Code Here
-    return None
+    sample=[]
+    for i in range(len(string):
+                   if string[i].isupper() or string[i].islower() or string[i].isdigit() or string[i]=='':
+                           sample. append(string[i]) 
+                   ns="".join(sample) 
+                   
+                   
+    return ns
 
 
 def sort_tuple_of_tuples(input_tuple):
@@ -338,7 +354,19 @@ def sort_tuple_of_tuples(input_tuple):
     """
 
     # Code Here
-    return None
+    l=[]
+    for i in range(len(input_tuple) :
+                   l. append(input_tuple[i]) 
+    for i in range(len(input_tuple)-1):
+                   for j in range(0, len(input_tuple) -i-1):
+                           if l[j][1]>l[j+1][1]:
+                                    t=l[j]
+                                    l[j]=l[j+1]
+                                    l[j+1]=t
+                   
+                   
+                   
+    return tuple(1) 
 
 
 def alpha_numeric_words(string):
@@ -355,7 +383,13 @@ def alpha_numeric_words(string):
     """
 
     # Code Here
-    return None
+    res=[]
+    temp=string.split() 
+    for idx in temp:
+        if any(chr.isalpha() for chr in idx) and any(chr.isdigit() for chr in idx) :
+            res. append(idx) 
+            
+    return ''. join(res) 
 
 
 def count_them_all(string):
