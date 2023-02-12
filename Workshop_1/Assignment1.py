@@ -120,10 +120,9 @@ def eqn_solver(A, B, C):
     returns:
         x, y (float, float)
     """
-
-   y = ((A[0]*C[1] - A[1]*C[0])/(A[0]*B[1] - A[1]*B[0]))
-   x = ((B[0]*C[1] - B[1]*C[0])/(B[0]*A[1] - B[1]*A[0]))
-   return x, y 
+    y = ((A[0]*C[1] - A[1]*C[0])/(A[0]*B[1] - A[1]*B[0]))
+    x = ((B[0]*C[1] - B[1]*C[0])/(B[0]*A[1] - B[1]*A[0]))
+    return x, y 
 
 
 def swap_case(string):
