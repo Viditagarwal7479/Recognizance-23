@@ -250,7 +250,9 @@ def resize_array(a):
     """
 
     # Code Here
-    return a.reshape(2,3)
+    import numpy as np
+    b = np.array(a)
+    return b.reshape(2,3)
 
 
 def reverse_step_array(a):
@@ -291,7 +293,7 @@ def reverse_words(string):
         s =  s + " " + a[-1]
         a.pop(-1)
         
-    return s
+    return s.strip()
 
 
 def count_characters(string):
@@ -308,12 +310,13 @@ def count_characters(string):
     """
 
     all_freq = {}
-    for i in test_str:
+    for i in string:
         if i in all_freq:
             all_freq[i] += 1
         else:
             all_freq[i] = 1
-    del all_freq[' ']
+    if ' ' in all_freq.keys():
+        del all_freq[' ']
     
     return all_freq
 
@@ -380,12 +383,14 @@ def alpha_numeric_words(string):
         string: "there33 how11 you1"
     """
 
-    dig = False
-    alp = False
     l = string.split(' ')
+    
     a = []
     for i in range(len(l)):
         for j in range(len(l[i])):
+            dig = False
+            alp = False
+            
             if l[i][j].isdigit():
                 dig = True
             if l[i][j].lower():
@@ -395,6 +400,7 @@ def alpha_numeric_words(string):
         if dig and alp:
             a.append(l[i])
     return ' '.join(a)
+
 
 
 def count_them_all(string):
@@ -418,7 +424,7 @@ def count_them_all(string):
             d = d+1
         elif string[i].isupper() or string[i].islower():
             c = c+1
-        else:
+        elif string[i] != ' ':
             s = s+1
     r = {'Characters': c, 'Numbers': d, 'Symbols': s}
     return r
