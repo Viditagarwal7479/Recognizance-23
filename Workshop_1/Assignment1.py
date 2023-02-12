@@ -383,23 +383,12 @@ def alpha_numeric_words(string):
         string: "there33 how11 you1"
     """
 
-    l = string.split(' ')
-    
-    a = []
-    for i in range(len(l)):
-        for j in range(len(l[i])):
-            dig = False
-            alp = False
-            
-            if l[i][j].isdigit():
-                dig = True
-            if l[i][j].lower():
-                alp = True
-            if l[i][j].isupper():
-                alp = True
-        if dig and alp:
-            a.append(l[i])
-    return ' '.join(a)
+    res = []
+    temp = string.split()
+    for idx in temp:
+        if any(chr.isalpha() for chr in idx) and any(chr.isdigit() for chr in idx):
+            res.append(idx)
+    return ' '.join(res)
 
 
 
