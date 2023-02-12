@@ -138,9 +138,16 @@ def swap_case(string):
         ## then
         string = 'hELLO wORLD'
     """
-
-    # Code Here
-    return None
+    a=""
+    l=strlen(string) 
+    for i in l:
+        if string[i].isupper() :
+            a=a+string[i].lower() 
+        if string[i].islower:
+            a=a+string[i].upper
+        else:
+            a=a+string[i]
+    return a
 
 
 def is_prime(num):
@@ -152,8 +159,15 @@ def is_prime(num):
         flag (bool)
     """
 
-    # Code Here
-    return None
+    flag=True
+    if num==1:
+        flag=False
+    if num>1:
+        for i in range(2, num) :
+            if (num%i) ==0:
+                flag=False
+                break
+    return flag
 
 
 def is_leap_year(year):
@@ -165,8 +179,11 @@ def is_leap_year(year):
         flag (bool)
     """
 
-    # Code Here
-    return None
+    if(year%4) ==0:
+        flag=True
+     else:
+        flag=False
+    return flag
 
 
 def is_perfect_square(num):
@@ -178,8 +195,11 @@ def is_perfect_square(num):
         flag (bool)
     """
 
-    # Code Here
-    return None
+    flag=True
+    if int(pow(num, 0.5)) -pow(num, 0.5) ==0:
+        flag=False
+    return flag
+    
 
 
 def is_perfect_number(num):
@@ -200,9 +220,14 @@ def is_perfect_number(num):
         ## then
         flag = False
     """
-
-    # Code Here
-    return None
+    flag=False
+    a=[]
+    for i in range(1, num) :
+        if num%i==0:
+            a. append(i)
+    if sum(a)==num:
+        flag=True
+    return flag
 
 
 def resize_array(a):
@@ -219,7 +244,10 @@ def resize_array(a):
     """
 
     # Code Here
-    return None
+    import numpy as np
+    B=np.array(a) 
+    
+    return B. reshape(2, 3) 
 
 
 def reverse_step_array(a):
@@ -236,7 +264,7 @@ def reverse_step_array(a):
     """
 
     # Code Here
-    return None
+    return a[::-3]
 
 
 def reverse_words(string):
@@ -253,7 +281,13 @@ def reverse_words(string):
     """
 
     # Code Here
-    return None
+    a=[]
+    s=""
+    a=string.split('') 
+    for i in range (len(a)) :
+        s=s+""+a[-1]
+        a. pop(-1) 
+    return s. strip() 
 
 
 def count_characters(string):
@@ -338,7 +372,19 @@ def count_them_all(string):
     """
 
     # Code Here
-    return None
+    d=0
+    s=0
+    c=0
+    for i in range (len(string)) :
+        if string[i].isdigit() :
+            d=d+1
+        elif string[i].isupper() or string[i].islower() :
+            c=c+1
+        elif string [i]! ='':
+            s=s+1
+      r={ 'characters':c , 'numbers':d, 'symbols':s}
+            
+    return r
 
 
 def hash_supremacy(string):
@@ -353,6 +399,10 @@ def hash_supremacy(string):
         ## then
         string: "#He was a### great #guy"
     """
-
-    # Code Here
-    return None
+    a=""
+    for i in range(len(string)) :
+        if string[i].isdigit() or string[i].isupper() or string[i].islower() :
+            a=a+string[i]
+        else:
+            a=a+"#"
+    return a
