@@ -252,16 +252,9 @@ def resize_array(a):
         ## then
         b = np.array([[1, 2, 3], [4, 5, 6]])
     """
-    l1 = []
-    l2 = []
-    for i in range(0,3):
-        l1.append(a[i])
-    for i in range(3,6):
-        l2.append(a[i])
-    l = []
-    l.append(l1)
-    l.append(l2)
-    return l
+    c = np.array(a)
+    c.resize(2,3)
+    return c
 
 
 def reverse_step_array(a):
@@ -389,16 +382,22 @@ def alpha_numeric_words(string):
 
     str = ''
     l = string.split(" ")
+    print(l)
     for i in l:
-        if(i.isalnum()):
-       
+        c1 =0
+        c2 =0
+        for j in i:
+            if(j.isdigit()):
+                c1 = c1 +1
+            elif(j.isalpha()):
+                c2 = c2+1
+        if(c1 >0 and c2>2):
             str = str+i
             str = str + " "
         else:
             continue
-      
+    print(str)
     return str.strip()
-
 
 def count_them_all(string):
     """
@@ -422,7 +421,7 @@ def count_them_all(string):
             number = number+1
         elif(i != ' '):
             special = special +1
-    dict = {'Charchters':char,'Numbers':number,'Symbols':special}
+    dict = {'Charachters':char,'Numbers':number,'Symbols':special}
     
     return dict
 
