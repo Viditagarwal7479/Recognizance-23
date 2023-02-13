@@ -125,8 +125,10 @@ def eqn_solver(A, B, C):
     det= A[0]*B[1]-A[1]*B[0]
     if(det==0):
         return None, None
+    x=-((C[1]*B[0]-C[0]*B[1])/det)
+    y=((C[1]*A[0]-C[0]*A[1])/det)
     else:
-        return ((C[1]*B[0]-C[0]*B[1])/det)),((C[1]*A[0]-C[0]*A[1])/det)
+        return x,y
 
 def swap_case(string):
     """
