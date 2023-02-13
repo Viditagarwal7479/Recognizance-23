@@ -292,7 +292,29 @@ def reverse_words(string):
     """
 
     # Code Here
-    return None
+    n=len(string)
+    l=[]
+    a=""
+    for i in range(n):
+        if string[i]==" ":
+            l.append(a)
+            a=""
+        elif i==n-1:
+            a+=string[i]
+            l.append(a)
+        else:
+            a+=string[i]
+    l.reverse()
+    res=""
+    n1=len(l)
+    for i in range (n1):
+        if i==n1-1:
+            res+=l[i]
+        else:
+            res+=l[i]
+            res+=" "
+    return res
+
 
 
 def count_characters(string):
