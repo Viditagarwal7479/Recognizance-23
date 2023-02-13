@@ -29,13 +29,11 @@ def word_is_palindrome(string):
         ## then
         flag = True
     """
-    flag=0
-    for i in range(int(len(string)/2)):
-        if(str[i]!=str[len(string)-i]):
-              flag=1
-              break
-    if(flag ==0):
-        return True
+    if string == string[::-1]:
+        flag=True
+    else:
+        flag=False
+    return flag
 
 
 def sqrt_of_numbers(num):
@@ -163,12 +161,11 @@ def is_prime(num):
     if num>1:
         for i in range(2,int(num/2+1)):
             if (num%i)==0 :
-                return True
-                break
-            else:
                 return False
+                break
+          
     else:
-        return False
+        return True
 
 
 def is_leap_year(year):
@@ -253,7 +250,7 @@ def resize_array(a):
     b=n.reshape(a,(2,3))
     return b
 
-import numpy as n
+import numpy as np
 def reverse_step_array(a):
     """
     This function returns the reversed array with step size of 3.
@@ -269,7 +266,7 @@ def reverse_step_array(a):
 
     
     b=[]
-    rev=n.flip(a)
+    rev=np.flip(a)
     n=len(a)
     for i in range(0,n-1):
         if i%3==0:
@@ -383,12 +380,12 @@ def alpha_numeric_words(string):
     """
 
     # Code Here
-    string_split = []
+    l = []
     t= string.split()
     for i in t:
         if any(ch.isalpha() for ch in i) and any(ch.isdigit() for ch in i):
-            string_split().append(i)
-    new_String=" ".join(string_split)
+            l.append(i)
+    new_String=" ".join(l)
     return new_String
 
 
