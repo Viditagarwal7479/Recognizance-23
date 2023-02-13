@@ -161,11 +161,14 @@ def is_prime(num):
     if num>1:
         for i in range(2,int(num/2+1)):
             if (num%i)==0 :
-                return False
+                flag=False
                 break
+            else:
+                flag=True
           
     else:
-        return True
+        flag=False
+    return flag
 
 
 def is_leap_year(year):
