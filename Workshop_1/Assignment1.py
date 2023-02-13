@@ -12,8 +12,8 @@ def square(x):
         y = 25
     """
 
-    # Code Here
-    return None
+    y=x**2
+    return y
 
 
 def word_is_palindrome(string):
@@ -29,9 +29,12 @@ def word_is_palindrome(string):
         ## then
         flag = True
     """
-
-    # Code Here
-    return None
+    int n=len(str)
+    for i in n/2
+       if(str[i]==str[n-i]):
+             return True
+        else:
+             return False
 
 
 def sqrt_of_numbers(num):
@@ -48,9 +51,9 @@ def sqrt_of_numbers(num):
     """
     if num < 0:
         raise ValueError('Number must be positive')
-
-    # Code Here
-    return None
+    else:
+        y=num**(0.5)
+        return y
 
 
 def Maximum(arr):
@@ -67,7 +70,7 @@ def Maximum(arr):
         Max1, Max2 = 5, 4
     """
 
-    # Code Here
+    
     return None, None
 
 
