@@ -33,9 +33,9 @@ def word_is_palindrome(string):
 
     if string == string[::-1]:
         flag=True
-        else:
-            flag=False
-            return flag
+    else:
+        flag=False
+        return flag
 
 
 def sqrt_of_numbers(num):
