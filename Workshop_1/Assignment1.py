@@ -431,7 +431,25 @@ def count_them_all(string):
     """
 
     # Code Here
-    return None
+    ctr=0
+    d={}
+    d['Characters']=0
+    d['Numbers']=0
+    d['Symbols']=0
+    for x in string:
+        a=ord(x)
+        if a>=48 and a<=57:
+            d['Numbers']+=1
+        elif x==' ':
+            ctr+=1
+        elif a>=65 and a<=90:
+            d['Characters']+=1
+        elif a>=97 and a<=122:
+            d['Characters']+=1
+        else:
+            d['Symbols']+=1
+    return d
+
 
 
 def hash_supremacy(string):
