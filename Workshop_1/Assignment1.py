@@ -13,7 +13,8 @@ def square(x):
     """
 
     # Code Here
-    return None
+    num=x**2
+    return num
 
 
 def word_is_palindrome(string):
@@ -31,7 +32,12 @@ def word_is_palindrome(string):
     """
 
     # Code Here
-    return None
+    sz=len(string)
+    chk=True
+    for i in range(sz//2):
+        if string[i]!=string[sz-i-1]:
+            chk=False
+    return chk
 
 
 def sqrt_of_numbers(num):
@@ -46,11 +52,15 @@ def sqrt_of_numbers(num):
         ## then
         sqroot = 5.20
     """
-    if num < 0:
-        raise ValueError('Number must be positive')
+    
 
     # Code Here
-    return None
+    import math
+    if num > 0:
+        res=math.sqrt(num)
+        return round(res, 2) 
+    else:
+        raise ValueError('Number must be positive')
 
 
 def Maximum(arr):
@@ -68,7 +78,9 @@ def Maximum(arr):
     """
 
     # Code Here
-    return None, None
+    arr.sort(reverse=True)
+    return arr[0], arr[1]
+
 
 
 def even_sort(arr):
@@ -86,7 +98,23 @@ def even_sort(arr):
     """
 
     # Code Here
-    return None
+    odd=[]
+    even=[]
+    n=len(arr)
+    for x in arr:
+        if x%2==0:
+            even.append(x)
+        else:
+            odd.append(x)
+    odd.sort()
+    even.sort()
+    sz=len(even)
+    for i in range(sz):
+        arr[i]=even[i]
+    for i in range(sz, n):
+        arr[i]=odd[i-sz]
+    
+    return arr
 
 
 def eqn_solver(A, B, C):
@@ -107,7 +135,12 @@ def eqn_solver(A, B, C):
     """
 
     # Code Here
-    return None, None
+    yn=((A[1]*C[0])-(C[1]*A[0]))
+    yd=((A[1]*B[0])-(B[1]*A[0]))
+    y=float(yn/yd)
+    x=float((C[0]-(B[0]*y))/A[0])
+    return  x, y
+
 
 
 def swap_case(string):
@@ -124,20 +157,16 @@ def swap_case(string):
     """
 
     # Code Here
-    return None
+    string=string.swapcase()
+    return string
+
 
 
 def is_prime(num):
-    """
-    This function returns True if the number is prime
-    args:
-        num (int)
-    returns:
-        flag (bool)
-    """
-
-    # Code Here
-    return None
+  for i in range(2,num):
+    if (num%i) == 0:
+      return False
+  return True
 
 
 def is_leap_year(year):
@@ -150,7 +179,11 @@ def is_leap_year(year):
     """
 
     # Code Here
-    return None
+    if (year%4 == 0 and year%100 != 0) or (year%400 == 0) :
+        return True
+    else:
+        return False
+
 
 
 def is_perfect_square(num):
@@ -163,7 +196,15 @@ def is_perfect_square(num):
     """
 
     # Code Here
-    return None
+    import math
+    x=math.sqrt(num)
+    x=int(x)
+    y=x*x
+    if num==y:
+        return True
+    else:
+        return False
+
 
 
 def is_perfect_number(num):
@@ -179,14 +220,21 @@ def is_perfect_number(num):
         num = 6
         ## then
         flag = True
-
         num = 7
         ## then
         flag = False
     """
 
     # Code Here
-    return None
+    sum_v=0
+    for i in range(1,num):
+        if num%i==0:
+            sum_v=sum_v+i
+    if(sum_v==num):
+        return True
+    else:
+        return False
+
 
 
 def resize_array(a):
@@ -203,7 +251,11 @@ def resize_array(a):
     """
 
     # Code Here
-    return None
+    import numpy as np
+    x=np.array(a)
+    x.resize(2,3)
+    return x
+
 
 
 def reverse_step_array(a):
@@ -220,7 +272,12 @@ def reverse_step_array(a):
     """
 
     # Code Here
-    return None
+    res=[]
+    n=len(a)
+    for i in range(2,n,3):
+        res.append(a[i]);
+    res.reverse()
+    return res
 
 
 def reverse_words(string):
@@ -237,7 +294,29 @@ def reverse_words(string):
     """
 
     # Code Here
-    return None
+    n=len(string)
+    l=[]
+    a=""
+    for i in range(n):
+        if string[i]==" ":
+            l.append(a)
+            a=""
+        elif i==n-1:
+            a+=string[i]
+            l.append(a)
+        else:
+            a+=string[i]
+    l.reverse()
+    res=""
+    n1=len(l)
+    for i in range (n1):
+        if i==n1-1:
+            res+=l[i]
+        else:
+            res+=l[i]
+            res+=" "
+    return res
+
 
 
 def count_characters(string):
@@ -254,7 +333,15 @@ def count_characters(string):
     """
 
     # Code Here
-    return None
+    freq={}
+    for x in string:
+        if x!=" ":
+            if x in freq:
+                freq[x]+=1;
+            else:
+                freq[x]=1
+    return freq
+
 
 
 def remove_special_characters(string):
@@ -271,7 +358,17 @@ def remove_special_characters(string):
     """
 
     # Code Here
-    return None
+    res=""
+    for x in string:
+        a=ord(x)
+        if x==" ":
+            res+=" "
+        elif a<48 or (a>57 and a<65) or (a>90 and a<97) or (a>122):
+            res+=""
+        else:
+            res+=x;
+    return res
+
 
 
 def sort_tuple_of_tuples(input_tuple):
@@ -288,7 +385,10 @@ def sort_tuple_of_tuples(input_tuple):
     """
 
     # Code Here
-    return None
+    MY_SORTED_TUPLE = tuple(sorted(input_tuple, key=lambda item: item[1]))
+    
+    return MY_SORTED_TUPLE
+
 
 
 def alpha_numeric_words(string):
@@ -305,7 +405,18 @@ def alpha_numeric_words(string):
     """
 
     # Code Here
-    return None
+    import re
+    res = re.findall(r'(?:\d+[a-zA-Z]+|[a-zA-Z]+\d+)', string)
+    ans=""
+    n=len(res)
+    for i in range(n):
+        if i==n-1:
+            ans+=res[i]
+        else:
+            ans+=res[i]
+            ans+=" "
+    return ans
+
 
 
 def count_them_all(string):
@@ -322,7 +433,25 @@ def count_them_all(string):
     """
 
     # Code Here
-    return None
+    ctr=0
+    d={}
+    d['Characters']=0
+    d['Numbers']=0
+    d['Symbols']=0
+    for x in string:
+        a=ord(x)
+        if a>=48 and a<=57:
+            d['Numbers']+=1
+        elif x==' ':
+            ctr+=1
+        elif a>=65 and a<=90:
+            d['Characters']+=1
+        elif a>=97 and a<=122:
+            d['Characters']+=1
+        else:
+            d['Symbols']+=1
+    return d
+
 
 
 def hash_supremacy(string):
@@ -339,4 +468,20 @@ def hash_supremacy(string):
     """
 
     # Code Here
-    return None
+    res=''
+    ctr=0
+    for x in string:
+        n=ord(x)
+        if x==' ':
+            res+=' '
+        elif n>=48 and n<=57:
+            res+=x
+        elif n>=65 and n<=90:
+            res+=x
+        elif n>=97 and n<=122:
+            res+=x
+        else:
+            res+='#'
+            
+    return res
+
