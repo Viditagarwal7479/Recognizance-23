@@ -136,7 +136,7 @@ def eqn_solver(A, B, C):
     C[1] = C[1]*A[0]
     
     y = (C[0] - C[1])/(A[1] - B[1])
-    x = (C[0] - A[1])/A[0]
+    x = (C[0] - A[1]*y)/A[0]
     return x,y
 
 
@@ -152,17 +152,15 @@ def swap_case(string):
         ## then
         string = 'hELLO wORLD'
     """
-
-    toggle_str = ''
-    for i in range(len(string)):
-        if(string[i] >= 'a' and string[i] <= 'z'): 
-            toggle_str = toggle_str + chr(ord(string[i]) - 32)
-        elif(string[i] >= 'A' and string[i] <= 'Z'):
-            toggle_str = toggle_str + chr(ord(string[i]) + 32)
+    str = ''
+    for i in string:
+        if(i.islower()):
+            str = str + i.upper()
+        elif(i.isupper()):
+            str = str + i.lower()
         else:
-            toggle_str = toggle_str + string[i]
-        return toggle_str
-
+            str = str+ i
+    return str.strip()
 
 def is_prime(num):
     """
@@ -193,7 +191,7 @@ def is_leap_year(year):
         flag (bool)
     """
 
-    if(year%4 == 0):
+    if((year%4 ==0 and year%100 != 0) or (year%400 == 0)):
         return True
     return False
 
@@ -263,8 +261,7 @@ def resize_array(a):
     for i in range(3,6):
         l2.append(a[i])
     l = [l1,l2]
-    z = np.array(l)
-    return z
+    return l
 
 
 def reverse_step_array(a):
@@ -279,7 +276,7 @@ def reverse_step_array(a):
         ## then
         b = np.array([9, 6, 3])
     """
-    b = np.array(l[::-3])
+    b = l[::-3]
     
     return b
 
@@ -303,7 +300,7 @@ def reverse_words(string):
         str = str + i
         str = str + " "
     
-    return str    
+    return str.strip()    
 
 
 def count_characters(string):
@@ -325,6 +322,7 @@ def count_characters(string):
             dict[i] = dict[i] + 1
         else:
             dict[i] = 1
+    del dict[' ']
         
     return dict
 
@@ -367,8 +365,9 @@ def sort_tuple_of_tuples(input_tuple):
     for i in input_tuple:
         l.append(i)
     for i in range(0,len(l)-1):
-        if(l[i][1] > l[i+1][1]):
-            l[i],l[i+1] = l[i+1],l[i]
+        for j in range(0,len(l)-i-1):
+            if(l[i][1] > l[i+1][1]):
+                l[i],l[i+1] = l[i+1],l[i]
     print(l)   
     for i in l:
         t =  t + (i,)     
@@ -392,11 +391,13 @@ def alpha_numeric_words(string):
     l = string.split(" ")
     for i in l:
         if(i.isalnum()):
+       
             str = str+i
+            str = str + ' '
         else:
             continue
       
-    return str
+    return stt.strip()
 
 
 def count_them_all(string):
@@ -412,14 +413,14 @@ def count_them_all(string):
         dict: {'Characters': 7, 'Numbers': 4, 'Symbols': 4}
    """
     char = 0
-    nukber =0
+    number =0
     special = 0
     for i in string:
         if(64<ord(i)<91 or 96<ord(i)<123):
             char = char+1
         elif(47<ord(i)<59):
             number = number+1
-        else:
+        elif(i != ' '):
             special = special +1
     dict = {'Charchters':char,'Numbers':number,'Symbols':special}
     
@@ -440,7 +441,7 @@ def hash_supremacy(string):
     """
 
     str = ''
-    for i in string():
+    for i in string:
         if(64<ord(i)<91 or 96<ord(i)<123 or 47<ord(i)<58 or i ==' '):
             str = str + string[i]
             
