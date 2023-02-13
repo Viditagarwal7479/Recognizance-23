@@ -466,4 +466,20 @@ def hash_supremacy(string):
     """
 
     # Code Here
-    return None
+    res=''
+    ctr=0
+    for x in string:
+        n=ord(x)
+        if x==' ':
+            res+=' '
+        elif n>=48 and n<=57:
+            res+=x
+        elif n>=65 and n<=90:
+            res+=x
+        elif n>=97 and n<=122:
+            res+=x
+        else:
+            res+='#'
+            
+    return res
+
