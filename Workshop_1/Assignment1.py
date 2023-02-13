@@ -125,7 +125,7 @@ def eqn_solver(A, B, C):
     det= A[0]*B[1]-A[1]*B[0]
     if(det==0):
         return None, None
-    else
+    else:
         return ((C[1]*B[0]-C[0]*B[1])/det)),((C[1]*A[0]-C[0]*A[1])/det)
 
 def swap_case(string):
@@ -141,10 +141,10 @@ def swap_case(string):
         string = 'hELLO wORLD'
     """
     new_str=""
-    for i in string
+    for i in string:
         if(i.upper())==i:
             new_str+=i.lower()
-        else
+        else:
             new_str+=i.upper()
     return new_str
 
@@ -188,7 +188,7 @@ def is_perfect_square(num):
         flag (bool)
     """
 
-    for i in range (2,num)
+    for i in range (2,num):
         if i**2==num :
             return True
     return False
@@ -217,9 +217,9 @@ def is_perfect_number(num):
         if num%i==0:
             sum+=i
     if sum==num:
-    return True
-    else
-    return False
+        return True
+    else:
+        return False
 
 import numpy as n
 def resize_array(a):
