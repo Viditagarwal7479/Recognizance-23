@@ -308,7 +308,7 @@ def count_characters(string):
             dict[i]=0
     for i in string:
         if i!=0:
-            dict[i]++
+            dict[i]=dict[i]+1
     return dict
 
 
