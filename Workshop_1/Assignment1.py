@@ -71,7 +71,7 @@ def Maximum(arr):
     """
 
     for i in range(len(arr)-1):
-        for j in range(i+1,len(arr)):
+        for j in range(i+1,len(arr)-2):
             if(arr[j]>=arr[j+1]):
                 temp=arr[j]
                 arr[j]=arr[j+1]
