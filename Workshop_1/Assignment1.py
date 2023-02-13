@@ -47,7 +47,7 @@ def even_sort(arr):
             t=even[i]
             even[i]=even[j]
             even[j]=t
-     for i in range(0,l2-1):
+    for i in range(0,l2-1):
       t=0
       for j in range(i+1,l2):
         if(odd[i]>odd[j]):
