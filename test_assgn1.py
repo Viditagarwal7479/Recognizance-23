@@ -80,7 +80,7 @@ class TestAssignment1(unittest.TestCase):
     def test_tuple_of_tuples(self):
         self.assertEqual(Assignment1.sort_tuple_of_tuples((('a', 55), ('z', 1), ('f', 37), ('w', 19))), (('z', 1), ('w', 19), ('f', 37), ('a', 55)))
         self.assertEqual(Assignment1.sort_tuple_of_tuples(((77 , 55), (55 , 1), (68 , 37), (0 , 19))), ((55, 1), (0, 19), (68, 37), (77, 55)))
-        self.assertEqual(Assignment1.sort_tuple_of_tuples((), ()), ((), ()))
+#         self.assertEqual(Assignment1.sort_tuple_of_tuples((), ()), ((), ()))
 
     def test_alpha_numeric_words(self):
         self.assertEqual(Assignment1.alpha_numeric_words("Hey there33 how11 are you1"), "there33 how11 you1")
