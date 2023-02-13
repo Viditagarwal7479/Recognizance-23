@@ -365,9 +365,9 @@ def sort_tuple_of_tuples(input_tuple):
     for i in input_tuple:
         l.append(i)
     for i in range(0,len(l)-1):
-        for j in range(0,len(l)-i-1):
-            if(l[i][1] > l[i+1][1]):
-                l[i],l[i+1] = l[i+1],l[i]
+        for j in range(0,len(l)-1):
+            if(l[j][1] > l[j+1][1]):
+              l[j],l[j+1] = l[j+1],l[j]
     print(l)   
     for i in l:
         t =  t + (i,)     
