@@ -270,7 +270,12 @@ def reverse_step_array(a):
     """
 
     # Code Here
-    return None
+    res=[]
+    n=len(a)
+    for i in range(2,n,3):
+        res.append(a[i]);
+    res.reverse()
+    return res
 
 
 def reverse_words(string):
