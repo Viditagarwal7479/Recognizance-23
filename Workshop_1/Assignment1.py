@@ -356,7 +356,17 @@ def remove_special_characters(string):
     """
 
     # Code Here
-    return None
+    res=""
+    for x in string:
+        a=ord(x)
+        if x==" ":
+            res+=" "
+        elif a<48 or (a>57 and a<65) or (a>90 and a<97) or (a>122):
+            res+=""
+        else:
+            res+=x;
+    return res
+
 
 
 def sort_tuple_of_tuples(input_tuple):
