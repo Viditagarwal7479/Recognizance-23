@@ -331,7 +331,15 @@ def count_characters(string):
     """
 
     # Code Here
-    return None
+    freq={}
+    for x in string:
+        if x!=" ":
+            if x in freq:
+                freq[x]+=1;
+            else:
+                freq[x]=1
+    return freq
+
 
 
 def remove_special_characters(string):
