@@ -251,16 +251,11 @@ def resize_array(a):
     """
 
     # Code Here
-    l=[]
-    m=[]
-    n=[]
-    for i in range(3):
-        l.append(a[i])
-    for i in range(3,6):
-        m.append(a[i])
-    n.append(l)
-    n.append(m)
-    return n
+    import numpy as np
+    x=np.array(a)
+    x.resize(2,3)
+    return x
+
 
 
 def reverse_step_array(a):
