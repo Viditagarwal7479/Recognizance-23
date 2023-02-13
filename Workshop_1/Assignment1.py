@@ -403,7 +403,18 @@ def alpha_numeric_words(string):
     """
 
     # Code Here
-    return None
+    import re
+    res = re.findall(r'(?:\d+[a-zA-Z]+|[a-zA-Z]+\d+)', string)
+    ans=""
+    n=len(res)
+    for i in range(n):
+        if i==n-1:
+            ans+=res[i]
+        else:
+            ans+=res[i]
+            ans+=" "
+    return ans
+
 
 
 def count_them_all(string):
