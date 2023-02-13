@@ -383,7 +383,10 @@ def sort_tuple_of_tuples(input_tuple):
     """
 
     # Code Here
-    return None
+    MY_SORTED_TUPLE = tuple(sorted(input_tuple, key=lambda item: item[1]))
+    
+    return MY_SORTED_TUPLE
+
 
 
 def alpha_numeric_words(string):
