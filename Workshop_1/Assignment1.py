@@ -343,7 +343,7 @@ def sort_tuple_of_tuples(input_tuple):
         ## then
         input_tuple: (('z', 1), ('w', 19), ('f', 37), ('a', 55))
     """
-
+    l = []
     for i in range(len(input_tuple)):
         l.append(input_tuple[i])
     for i in range(len(input_tuple)-1):
