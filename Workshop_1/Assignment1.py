@@ -304,16 +304,16 @@ def reverse_words(string):
     """
 
     # Code Here
-    s = string.split()[::-1]
-    l = []
-    for i in s:
-        l.append(i)
-    string2 = ""
-    for x in l:
-        string2 += x
-        string2 +=" "
-
-    return string2
+    s = ""
+    ss = ""
+    for i in string:
+        if i != ' ':
+            ss = ss+i
+        else:
+            s = ' '+ss+s
+            ss = ""
+    s = ss+s
+    return s
 
 
 def count_characters(string):
