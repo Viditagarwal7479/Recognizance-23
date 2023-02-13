@@ -54,7 +54,7 @@ def even_sort(arr):
             t=odd[i]
             odd[i]=odd[j]
             odd[j]=t    
-     return even+odd
+    return even+odd
 
 
 def eqn_solver(A, B, C):
