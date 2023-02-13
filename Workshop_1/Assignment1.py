@@ -220,14 +220,21 @@ def is_perfect_number(num):
         num = 6
         ## then
         flag = True
-
         num = 7
         ## then
         flag = False
     """
 
     # Code Here
-    return None
+    sum_v=0
+    for i in range(1,num):
+        if num%i==0:
+            sum_v=sum_v+i
+    if(sum_v==num):
+        return True
+    else:
+        return False
+
 
 
 def resize_array(a):
