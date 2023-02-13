@@ -127,18 +127,16 @@ def eqn_solver(A, B, C):
     returns:
         x, y (float, float)
     """
-
-    for i in range(0,2):
-        A[i] = A[i]*B[0]
-    C[0] = C[0]*B[0]
-    for i in range(0,2):
-        B[i] = B[i]*A[0]
-    C[1] = C[1]*A[0]
-    
-    y = (C[0] - C[1])/(A[1] - B[1])
-    x = (C[0] - A[1]*y)/A[0]
+    t = A[0]
+    A[0] = A[0] * A[1]
+    B[0] = B[0] * A[1]
+    C[0] = C[0] * A[1]
+    A[1] = A[1] * t
+    B[1] = B[1] * t
+    C[1] = C[1] * t
+    y = (C[0] - C[1])/(B[0] - B[1])
+    x = (C[0] - y*B[0])/A[0]
     return x,y
-
 
 def swap_case(string):
     """
@@ -260,7 +258,9 @@ def resize_array(a):
         l1.append(a[i])
     for i in range(3,6):
         l2.append(a[i])
-    l = [l1,l2]
+    l = []
+    l.append(l1)
+    l.append(l2)
     return l
 
 
@@ -393,7 +393,7 @@ def alpha_numeric_words(string):
         if(i.isalnum()):
        
             str = str+i
-            str = str + ' '
+            str = str + " "
         else:
             continue
       
