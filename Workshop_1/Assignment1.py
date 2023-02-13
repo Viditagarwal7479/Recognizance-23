@@ -12,7 +12,6 @@ def square(x):
         y = 25
     """
 
-   
     y=x**2
     return y
 
@@ -35,7 +34,7 @@ def word_is_palindrome(string):
         flag=True
     else:
         flag=False
-        return flag
+    return flag
 
 
 def sqrt_of_numbers(num):
@@ -52,10 +51,10 @@ def sqrt_of_numbers(num):
     """
     if num < 0:
         raise ValueError('Number must be positive')
-
     else:
         sqroot=num**0.5
-    return round(sqroot,2)
+        return round(sqroot,2)
+    
 
 
 def Maximum(arr):
@@ -71,7 +70,7 @@ def Maximum(arr):
         ## then
         Max1, Max2 = 5, 4
     """
-
+ 
     Max1 = max(arr[0], arr[1])
     Max2 = min(arr[0], arr[1])
     n = len(arr)
@@ -99,7 +98,8 @@ def even_sort(arr):
         sort_arr = [2, 6, 88 ,7 ,15]
         ## This is any even number is smaller than any odd number
     """
-     sort_arr=[]
+
+    sort_arr=[]
     oArr=[]
     for i in arr:
         if i%2 == 0:
@@ -130,6 +130,7 @@ def eqn_solver(A, B, C):
     returns:
         x, y (float, float)
     """
+
     x=-(B[0]*C[1]-B[1]*C[0])/(A[0]*B[1]-A[1]*B[0])
     y=(A[0]*C[1]-A[1]*C[0])/(A[0]*B[1]-A[1]*B[0])
     return x, y
@@ -168,7 +169,6 @@ def is_prime(num):
         flag (bool)
     """
 
- 
     if num > 1:
         for i in range(2, int(num/2)+1):
             if (num % i) == 0:
@@ -179,7 +179,6 @@ def is_prime(num):
     else:
         flag = False
     return flag
-    
 
 
 def is_leap_year(year):
@@ -191,8 +190,7 @@ def is_leap_year(year):
         flag (bool)
     """
 
-   
-     if year%4 !=0:
+    if year%4 !=0:
         flag = False
      
     else:
@@ -206,9 +204,8 @@ def is_leap_year(year):
                 
                 
     return flag
-   
 
-
+import math
 def is_perfect_square(num):
     """
     This function returns True if the number is perfect square i.e. it is a square of some integer.
@@ -218,10 +215,8 @@ def is_perfect_square(num):
         flag (bool)
     """
 
-    
-     sr = int(math.sqrt(num))
+    sr = int(math.sqrt(num))
     return ((sr*sr) == num)
-    
 
 
 def is_perfect_number(num):
@@ -243,15 +238,14 @@ def is_perfect_number(num):
         flag = False
     """
 
-   
     sum = 0
     for x in range(1, num):
         if num % x == 0:
             sum += x
     return sum == num
-   
+    
 
-
+import numpy as np
 def resize_array(a):
     """
     This function resizes a 1D array to 2D array of size 2x3
@@ -265,10 +259,9 @@ def resize_array(a):
         b = np.array([[1, 2, 3], [4, 5, 6]])
     """
 
-    
+  
     b = np.reshape(a, (2, 3))
     return b
-    
 
 
 def reverse_step_array(a):
@@ -283,8 +276,6 @@ def reverse_step_array(a):
         ## then
         b = np.array([9, 6, 3])
     """
-
-    
     b=[]
     rev=np.flip(a)
     n=len(a)
@@ -293,7 +284,6 @@ def reverse_step_array(a):
             b.append(rev[i])
             
     return b
-    
 
 
 def reverse_words(string):
@@ -315,7 +305,6 @@ def reverse_words(string):
         l.append(i)
     String=" ".join(l)    
     return String
-    
 
 
 def count_characters(string):
@@ -331,7 +320,6 @@ def count_characters(string):
         dict = {'H': 1, 'e': 1, 'l': 3, 'o': 2, 'W': 1, 'r': 1, 'd': 1}
     """
 
-    
     dict ={}
     n=len(string)
     for i in string:
@@ -341,7 +329,6 @@ def count_characters(string):
       if i!=" ":
           dict[i]=dict[i]+1
     return dict
-    
 
 
 def remove_special_characters(string):
@@ -357,15 +344,12 @@ def remove_special_characters(string):
         str = 'Hello World 123 th15 1s 4 t35t str1ng'
     """
 
-   
     new_string = ''
     for i in string:
         if i.isalnum() or i==' ':
             new_string=new_string+i
 
     return new_string
-
-    
 
 
 def sort_tuple_of_tuples(input_tuple):
@@ -391,7 +375,6 @@ def sort_tuple_of_tuples(input_tuple):
                 list1[j+1] = temp
     output_tuple=tuple(list1)            
     return output_tuple
-    
 
 
 def alpha_numeric_words(string):
@@ -407,15 +390,13 @@ def alpha_numeric_words(string):
         string: "there33 how11 you1"
     """
 
-     l = []
+    l = []
     t= string.split()
     for i in t:
         if any(ch.isalpha() for ch in i) and any(ch.isdigit() for ch in i):
             l.append(i)
     String=" ".join(l)    
     return String
-
-   
 
 
 def count_them_all(string):
@@ -440,7 +421,6 @@ def count_them_all(string):
         elif i!=' ':
             dict['Symbols']=dict['Symbols']+1
     return dict
-  
 
 
 def hash_supremacy(string):
@@ -455,8 +435,7 @@ def hash_supremacy(string):
         ## then
         string: "#He was a### great #guy"
     """
-
-     nstr='' 
+    nstr='' 
     for i in string:
         if i.isalpha() or i.isdigit() or i==' ':
           nstr=nstr+i
