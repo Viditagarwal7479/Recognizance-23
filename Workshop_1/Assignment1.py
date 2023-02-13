@@ -30,7 +30,7 @@ def word_is_palindrome(string):
         flag = True
     """
     flag=0
-    for i in range(len(string)/2):
+    for i in range(int(len(string)/2)):
         if(str[i]!=str[len(string)-i]):
               flag=1
               break
@@ -72,12 +72,12 @@ def Maximum(arr):
 
     for i in range(len(arr)-1):
         for j in range(i+1,len(arr)):
-            if(a[j]>=a[j+1]):
-                temp=a[j]
-                a[j]=a[j+1]
-                a[j+1]=temp
+            if(arr[j]>=arr[j+1]):
+                temp=arr[j]
+                arr[j]=arr[j+1]
+                arr[j+1]=temp
             
-    return a[len(arr)-1],a[len(arr)-2]
+    return arr[len(arr)-1],arr[len(arr)-2]
 
 
 def even_sort(arr):
@@ -160,11 +160,15 @@ def is_prime(num):
     returns:
         flag (bool)
     """
-
-    for i in range(2,num):
-        if num%i==0 :
-            return True
-    return False
+    if num>1:
+        for i in range(2,int(num/2+1)):
+            if (num%i)==0 :
+                return True
+                break
+            else
+                return False
+    else
+        return False
 
 
 def is_leap_year(year):
@@ -176,10 +180,18 @@ def is_leap_year(year):
         flag (bool)
     """
 
-    if year%4==0 or year%400==0 :
-        return True
+    if year%4 !=0:
+        flag = False
+
     else:
-        return False
+        if year%100 !=0:
+            flag = True
+        else:
+            if year%400 ==0:
+                flag = True
+            else:
+                flag = False
+    return flag
 
 
 def is_perfect_square(num):
@@ -239,7 +251,7 @@ def resize_array(a):
     """
     
     b=n.reshape(a,(2,3))
-    return None
+    return b
 
 import numpy as n
 def reverse_step_array(a):
@@ -257,7 +269,7 @@ def reverse_step_array(a):
 
     
     b=[]
-    rev=np.flip(a)
+    rev=n.flip(a)
     n=len(a)
     for i in range(0,n-1):
         if i%3==0:
@@ -304,10 +316,10 @@ def count_characters(string):
     dict={}
     n=len(string)
     for i in string:
-        if i!=0:
+        if i!=0 and i!=' ':
             dict[i]=0
     for i in string:
-        if i!=0:
+        if i!=0 and i!=' ':
             dict[i]=dict[i]+1
     return dict
 
@@ -327,7 +339,7 @@ def remove_special_characters(string):
     new_string=""
     for i in string:
         if i.isalnum() or i==' ':
-            new_strin+=i
+            new_string=new_string+i
     return new_string
 
 
@@ -376,7 +388,7 @@ def alpha_numeric_words(string):
     for i in t:
         if any(ch.isalpha() for ch in i) and any(ch.isdigit() for ch in i):
             string_split().append(i)
-    new_String=" ".join(l)
+    new_String=" ".join(string_split)
     return new_String
 
 
