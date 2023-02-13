@@ -19,7 +19,7 @@ def Maximum(arr):
     max1=arr[0]
     max2=arr[0]
     for i in arr :
-      if(max1<i)
+      if(max1<i):
         max1=i
     for i in arr:
       if(i==max1):
