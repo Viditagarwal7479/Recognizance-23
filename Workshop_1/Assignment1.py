@@ -69,7 +69,7 @@ def Maximum(arr):
     max1= 0
     max2 = 0
     for i in arr:
-        if (i>max):
+        if (i>max1):
             max1 = i
     l = []
     for i in arr:
@@ -276,7 +276,7 @@ def reverse_step_array(a):
         ## then
         b = np.array([9, 6, 3])
     """
-    b = l[::-3]
+    b = a[::-3]
     
     return b
 
@@ -397,7 +397,7 @@ def alpha_numeric_words(string):
         else:
             continue
       
-    return stt.strip()
+    return str.strip()
 
 
 def count_them_all(string):
@@ -443,7 +443,7 @@ def hash_supremacy(string):
     str = ''
     for i in string:
         if(64<ord(i)<91 or 96<ord(i)<123 or 47<ord(i)<58 or i ==' '):
-            str = str + string[i]
+            str = str + i
             
         else:
             str = str + '#'
