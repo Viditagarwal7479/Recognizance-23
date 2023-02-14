@@ -1,3 +1,6 @@
+import math
+# import numpy as np
+
 def square(x):
     """
     This is a demo function
@@ -13,7 +16,8 @@ def square(x):
     """
 
     # Code Here
-    return None
+   
+    return x**2
 
 
 def word_is_palindrome(string):
@@ -31,7 +35,17 @@ def word_is_palindrome(string):
     """
 
     # Code Here
-    return None
+    n=len(string)
+    flag=True
+    for i in range(0,n):
+        if string[i]!=string[n-i-1]:
+            flag=False
+            break
+        
+
+
+                   
+    return flag
 
 
 def sqrt_of_numbers(num):
@@ -50,7 +64,9 @@ def sqrt_of_numbers(num):
         raise ValueError('Number must be positive')
 
     # Code Here
-    return None
+    s=math.sqrt(num)
+    
+    return round(s,2)
 
 
 def Maximum(arr):
@@ -68,7 +84,10 @@ def Maximum(arr):
     """
 
     # Code Here
-    return None, None
+    n=len(arr)
+    arr.sort()
+
+    return arr[n-1], arr[n-2]
 
 
 def even_sort(arr):
@@ -86,7 +105,16 @@ def even_sort(arr):
     """
 
     # Code Here
-    return None
+    even_list=[]
+    odd_list=[]
+    for i in arr:
+        if(i%2==0):
+            even_list.append(i)
+        else:
+            odd_list.append(i)
+    even_list.sort()
+    odd_list.sort()
+    return even_list+odd_list
 
 
 def eqn_solver(A, B, C):
@@ -107,7 +135,10 @@ def eqn_solver(A, B, C):
     """
 
     # Code Here
-    return None, None
+    y=float(C[1]*A[0]-A[1]*C[0])/(B[1]*A[0]-A[1]*B[0])
+    x=float(C[0]*B[1]-B[0]*C[1])/(B[1]*A[0]-A[1]*B[0])
+
+    return x,y
 
 
 def swap_case(string):
@@ -124,7 +155,8 @@ def swap_case(string):
     """
 
     # Code Here
-    return None
+    
+    return string.swapcase()
 
 
 def is_prime(num):
@@ -137,7 +169,14 @@ def is_prime(num):
     """
 
     # Code Here
-    return None
+    flag=True
+    x=int(math.sqrt(num))
+    for i in range(2,x):
+        if(num%i==0):
+            flag=False
+            break
+
+    return flag
 
 
 def is_leap_year(year):
@@ -150,7 +189,10 @@ def is_leap_year(year):
     """
 
     # Code Here
-    return None
+    flag=False
+    if (year%4 == 0 and year%100 != 0) or (year%400 == 0) :
+        flag=True
+    return flag
 
 
 def is_perfect_square(num):
@@ -163,7 +205,11 @@ def is_perfect_square(num):
     """
 
     # Code Here
-    return None
+    flag=False
+    sqrt=round(math.sqrt(num))
+    if sqrt==math.sqrt(num):
+        flag=True
+    return flag
 
 
 def is_perfect_number(num):
@@ -186,7 +232,15 @@ def is_perfect_number(num):
     """
 
     # Code Here
-    return None
+    flag=False
+    sum=0
+    for i in range (1,num):
+        if(num%i==0):
+            sum=sum+i
+
+    if (sum==num):
+        flag=True
+    return flag
 
 
 def resize_array(a):
@@ -203,7 +257,9 @@ def resize_array(a):
     """
 
     # Code Here
-    return None
+    arr=[[a[0],a[1],a[2]],[a[3],a[4],a[5]]]
+
+    return arr
 
 
 def reverse_step_array(a):
@@ -220,7 +276,11 @@ def reverse_step_array(a):
     """
 
     # Code Here
-    return None
+    b=[]
+    for i in range(-1,-len(a)-1,-3):
+        b.append(a[i])
+
+    return b
 
 
 def reverse_words(string):
@@ -237,7 +297,11 @@ def reverse_words(string):
     """
 
     # Code Here
-    return None
+    words = string.split(' ')
+    rev = ' '.join(reversed(words))
+ 
+    return rev
+    
 
 
 def count_characters(string):
@@ -254,7 +318,14 @@ def count_characters(string):
     """
 
     # Code Here
-    return None
+    mydict= dict()
+    for i in range(0,len(string)):
+        if(string[i]!=' '):
+            if(string[i] in mydict):
+                mydict[string[i]]+=1
+            else :
+                mydict[string[i]]=1
+    return mydict
 
 
 def remove_special_characters(string):
@@ -271,7 +342,12 @@ def remove_special_characters(string):
     """
 
     # Code Here
-    return None
+    string_without = ""
+    for i in string:
+        if (ord(i) > 64 and ord(i) < 91) or (ord(i) > 96 and ord(i) < 123) or (ord(i) > 47 and ord(i) < 58) or i == ' ':
+            string_without = string_without+i
+
+    return string_without
 
 
 def sort_tuple_of_tuples(input_tuple):
@@ -288,7 +364,16 @@ def sort_tuple_of_tuples(input_tuple):
     """
 
     # Code Here
-    return None
+    new_tup = list(input_tuple)
+    leng = len(new_tup)
+    for i in range(0, leng):
+        for j in range(0, leng-i-1):
+            if new_tup[i]:
+                if new_tup[j][1] > new_tup[j+1][1]:
+                    temp = new_tup[j]
+                    new_tup[j] = new_tup[j + 1]
+                    new_tup[j + 1] = temp
+    return tuple(new_tup)
 
 
 def alpha_numeric_words(string):
@@ -305,7 +390,26 @@ def alpha_numeric_words(string):
     """
 
     # Code Here
-    return None
+    s = ""
+    new_s = ""
+    x = 0
+    y = 0
+    for i in string:
+        if i != ' ':
+            new_s = new_s+i
+            if (ord(i) > 64 and ord(i) < 91) or (ord(i) > 96 and ord(i) < 123):
+                x += 1
+            elif ord(i) > 47 and ord(i) < 58:
+                y += 1
+        else:
+            if x > 0 and y > 0:
+                s = s+new_s+' '
+            x = 0
+            y = 0
+            new_s = ""
+    if x > 0 and y > 0:
+        s = s+new_s
+    return s
 
 
 def count_them_all(string):
@@ -322,7 +426,18 @@ def count_them_all(string):
     """
 
     # Code Here
-    return None
+    x = 0
+    y = 0
+    z = 0
+    for i in string:
+        if (ord(i) > 64 and ord(i) < 91) or (ord(i) > 96 and ord(i) < 123):
+            x += 1
+        elif ord(i) > 47 and ord(i) < 58:
+            y += 1
+        elif i != ' ':
+            z += 1
+    dict = {'Characters': x, 'Numbers': y, 'Symbols': z}
+    return dict
 
 
 def hash_supremacy(string):
@@ -339,4 +454,18 @@ def hash_supremacy(string):
     """
 
     # Code Here
-    return None
+    new_s = ""
+    for i in string:
+        if (ord(i) > 64 and ord(i) < 91) or (ord(i) > 96 and ord(i) < 123) or (ord(i) > 47 and ord(i) < 58) or i == ' ':
+            new_s = new_s+i
+        else:
+            new_s = new_s+'#'
+    return new_s
+
+
+
+
+
+
+
+
