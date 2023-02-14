@@ -1,5 +1,5 @@
 import math
-# import numpy as np
+import numpy as np
 
 def square(x):
     """
@@ -170,8 +170,10 @@ def is_prime(num):
 
     # Code Here
     flag=True
-    x=int(math.sqrt(num))
-    for i in range(2,x):
+    if num==1:
+        flag=False
+    
+    for i in range(2,num):
         if(num%i==0):
             flag=False
             break
@@ -257,9 +259,9 @@ def resize_array(a):
     """
 
     # Code Here
-    arr=[[a[0],a[1],a[2]],[a[3],a[4],a[5]]]
+   
 
-    return arr
+    return  np.resize(a,(2,3))
 
 
 def reverse_step_array(a):
