@@ -30,11 +30,12 @@ def word_is_palindrome(string):
         flag = True
     """
     int n=len(str)
-    for i in n/2
-       if(str[i]==str[n-i]):
-             return True
+    for i in range(0,n/2):
+       if(str[i]==str[n-1-i]):
+             continue
         else:
              return False
+    return True
 
 
 def sqrt_of_numbers(num):
@@ -69,9 +70,20 @@ def Maximum(arr):
         ## then
         Max1, Max2 = 5, 4
     """
-
-    
-    return None, None
+    max1=0
+    max2=0
+    for i in arr:
+        if(i>max1):
+            max1=i
+    for i in arr:
+        if(i>max2 && max2<max1):
+            max2=i
+    return max1,max2
+     
+            
+        
+        
+        
 
 
 def even_sort(arr):
@@ -87,10 +99,25 @@ def even_sort(arr):
         sort_arr = [2, 6, 88 ,7 ,15]
         ## This is any even number is smaller than any odd number
     """
-
-    # Code Here
-    return None
-
+    even_num=[]
+    odd_num=[]
+    for i in arr:
+        if(i%2==0) :
+            even_num.append(i)
+        else:
+            odd_num.append(i)
+            
+    even_num.sort()
+    sort_arr=even_num+odd_num
+    return sort_arr
+         
+       
+    
+    
+    
+    
+    
+ 
 
 def eqn_solver(A, B, C):
     """
@@ -109,8 +136,9 @@ def eqn_solver(A, B, C):
         x, y (float, float)
     """
 
-    # Code Here
-    return None, None
+    x=(C[0]*B[1]-C[1]*B[0])/(A[0]*B[1]-A[1]*B[0])
+    y=(C[0]*A[1]-C[1]*A[0])/(A[1]*B[0]-A[0]*B[1])
+    return x,y
 
 
 def swap_case(string):
@@ -126,8 +154,8 @@ def swap_case(string):
         string = 'hELLO wORLD'
     """
 
-    # Code Here
-    return None
+    swapped_string=string.swapcase()
+    return swapped_string
 
 
 def is_prime(num):
@@ -139,8 +167,15 @@ def is_prime(num):
         flag (bool)
     """
 
-    # Code Here
-    return None
+    for i in range(2,num):
+        if(num%i==0) :
+            return False
+            break
+        else if :
+            return True
+        
+        
+
 
 
 def is_leap_year(year):
@@ -151,11 +186,15 @@ def is_leap_year(year):
     returns:
         flag (bool)
     """
-
-    # Code Here
-    return None
-
-
+    if(year%100==0 && year%400==0):
+        return True
+   else if (year%100==0):
+        return False
+    else if(year%4==0) :
+        return True
+    else :
+        return False
+    
 def is_perfect_square(num):
     """
     This function returns True if the number is perfect square i.e. it is a square of some integer.
@@ -163,10 +202,16 @@ def is_perfect_square(num):
         num (int)
     returns:
         flag (bool)
-    """
-
-    # Code Here
-    return None
+   """
+import math
+if(num<0):
+    return False
+else if (num==0):
+    return True
+else:
+    root=int (math.sqrt(num))
+    return root*root==num
+    
 
 
 def is_perfect_number(num):
@@ -187,9 +232,18 @@ def is_perfect_number(num):
         ## then
         flag = False
     """
+    ans=0
+    while(num!=0) :
+        ans=ans+int(num%10)
+        num=int(num%10)
+    if(ans==num) :
+        return True
+    else():
+        return False
 
-    # Code Here
-    return None
+        
+        
+
 
 
 def resize_array(a):
@@ -221,9 +275,15 @@ def reverse_step_array(a):
         ## then
         b = np.array([9, 6, 3])
     """
-
-    # Code Here
-    return None
+      i=0
+      j=0
+      n=a.size
+      while(i<=n-1):
+            b[j]=a[n-1-i]
+            j++
+            i=i+3
+      return b
+        
 
 
 def reverse_words(string):
