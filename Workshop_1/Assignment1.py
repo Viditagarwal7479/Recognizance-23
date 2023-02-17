@@ -258,9 +258,13 @@ def resize_array(a):
         ## then
         b = np.array([[1, 2, 3], [4, 5, 6]])
     """
+    k=0
+    for i in range(0,2):
+        for j in range(0,3) :
+            b[i][j]=a[k]
+            k++
+    return b
 
-    # Code Here
-    return None
 
 
 def reverse_step_array(a):
@@ -298,9 +302,11 @@ def reverse_words(string):
         ## then
         string = 'World Again Hello'
     """
-
-    # Code Here
-    return None
+  words=string.split()
+  words.reverse()
+  reversed_words=' '.join(words)
+  return reversed_words
+   
 
 
 def count_characters(string):
@@ -315,9 +321,16 @@ def count_characters(string):
         ## then
         dict = {'H': 1, 'e': 1, 'l': 3, 'o': 2, 'W': 1, 'r': 1, 'd': 1}
     """
-
-    # Code Here
-    return None
+char_count={}
+for char in string :
+    if(char==' '):
+        continue
+    if (char not in char_count):
+        char_count[char]=1
+    else ():
+        char_count[char]+=1
+return char_count
+    
 
 
 def remove_special_characters(string):
@@ -332,9 +345,13 @@ def remove_special_characters(string):
         ## then
         str = 'Hello World 123 th15 1s 4 t35t str1ng'
     """
+new_string = ""
+    for char in string:
+        if char.isalpha() or char.isdigit():
+            new_string += char
 
-    # Code Here
-    return None
+    return new_string
+    
 
 
 def sort_tuple_of_tuples(input_tuple):
@@ -349,9 +366,10 @@ def sort_tuple_of_tuples(input_tuple):
         ## then
         input_tuple: (('z', 1), ('w', 19), ('f', 37), ('a', 55))
     """
+    sorted_tuple=sorted(input_tuple,key=lambda x:x[2])
+    return sorted_tuple
 
-    # Code Here
-    return None
+    
 
 
 def alpha_numeric_words(string):
@@ -366,9 +384,14 @@ def alpha_numeric_words(string):
         ## then
         string: "there33 how11 you1"
     """
+  words = string.split()
+    result = []
+    for word in words:
+        if any(char.isalpha() for char in word) and any(char.isdigit() for char in word):
+            result.append(word)
+    return ' '.join(result)
 
-    # Code Here
-    return None
+
 
 
 def count_them_all(string):
@@ -383,9 +406,10 @@ def count_them_all(string):
         ## then
         dict: {'Characters': 7, 'Numbers': 4, 'Symbols': 4}
     """
-
-    # Code Here
-    return None
+    count_chars = sum(1 for c in string if c.isalpha())
+    count_nums = sum(1 for c in string if c.isdigit())
+    count_symbols = len(string) - count_chars - count_nums
+    return {'Characters': count_chars, 'Numbers': count_nums, 'Symbols': count_symbols}
 
 
 def hash_supremacy(string):
@@ -400,6 +424,11 @@ def hash_supremacy(string):
         ## then
         string: "#He was a### great #guy"
     """
-
-    # Code Here
-    return None
+    new_string=''
+    for c in string :
+        if(c==" " or c.isalpha() or c.isdigit()):
+            new_string+=c
+         else:
+            new_string+="#"
+     return new_string
+    
