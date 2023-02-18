@@ -29,7 +29,7 @@ def word_is_palindrome(string):
         ## then
         flag = True
     """
-    int n=len(str)
+    n=len(str)
     for i in range(0,n/2):
        if(str[i]==str[n-1-i]):
              continue
