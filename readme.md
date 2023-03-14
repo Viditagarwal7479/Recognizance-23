@@ -6,8 +6,8 @@ Recognizance is the annual machine learning event of [Prastuti](https://prastuti
 
 # Workshops
 
-1. Introductory Workshop and Python
-2. Introduction to Machine Learning
+1. [Introductory Workshop and Python](https://github.com/Viditagarwal7479/Recognizance-23/tree/main/Workshop_1)
+2. [Introduction to Machine Learning](https://github.com/Viditagarwal7479/Recognizance-23/tree/main/Workshop_2)
 3. Introduction to Data Science
 4. Introduction to Computer Vision
 5. Introduction to Reinforcement Learning
