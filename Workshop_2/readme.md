@@ -2,7 +2,9 @@
 
 ## Assignment
 
-Hold on Buddy [^^]  get the basics first and keep a eye ;(Oo); right here for the assignment.
+- This [Google Form](https://forms.gle/qgThZjzBgDP89pgf6) contains few objective and subjective questions to test your `fundamentals` corresponding to what was thought in worshop-2.
+- This [GitHub Repository](https://github.com/sherlockholmes1603/Prastuti-Workshop-1-Assignment#assignment) contains your assignment for `supervised learning part`.
+- This [Jupyter Notebook](./WS2_KMeans_practice.ipynb) contains the assignment for the `unsupervised learning part` which will make you comfortable with K-Means Clustering.
 
 ## Resources
 
