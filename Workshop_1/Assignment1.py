@@ -73,9 +73,7 @@ def Maximum(arr):
         ## then
         Max1, Max2 = 5, 4
     """
-
-     arr.sort()            
-   
+    arr.sort()
     return arr[-1],arr[-2]
 
 
