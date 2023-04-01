@@ -368,7 +368,7 @@ def sort_tuple_of_tuples(input_tuple):
     for i in range(len(input_tuple)):
         l.append(input_tuple[i])
     for i in range(len(input_tuple)-1):
-        for j in range(len(input_tuple)-i-1):
+        for j in range(0,len(input_tuple)-i-1):
             if l[j][1] > l[j+1][1]:
                 t =l[j]
                 l[j]=l[j+1]
@@ -450,4 +450,4 @@ def hash_supremacy(string):
         else:
             a = a+"#"
     return a
-    return None
+    
