@@ -1,19 +1,19 @@
-# def square(x):
-#     """
-#     This is a demo function
-#     Where in you just return square of the number
-#     args:
-#         x (int)
-#     returns:
-#         y (int)
-#     ex:
-#         x = 5
-#         ## then
-#         y = 25
-#     """
+def square(x):
+    """
+    This is a demo function
+    Where in you just return square of the number
+    args:
+        x (int)
+    returns:
+        y (int)
+    ex:
+        x = 5
+        ## then
+        y = 25
+    """
 
-#     y=x**2
-#     return y
+    y=x**2
+    return y
 
 
 # def word_is_palindrome(string):
