@@ -163,7 +163,7 @@ def is_prime(num):
     flag = True
     if num ==1:
         flag = False
-    elif :
+    elif:
         for i in range(2,num):
              if (num%i)==0:
                 flag = False
@@ -239,7 +239,7 @@ def is_perfect_number(num):
         flag = True
      else:
         flag = False
-    return flag
+     return flag
 
 
 def resize_array(a):
