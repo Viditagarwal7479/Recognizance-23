@@ -94,9 +94,9 @@ def even_sort(arr):
     for i in range(len(arr)):
         for t in range(len(arr)-i):
             if arr[t]%2 !=0 and arr[j+1]%2 ==0:
-            z=arr[j]
-            arr[j] = arr[j+1]
-            arr[j+1]=z
+                z=arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1]=z
     
     
     return arr
