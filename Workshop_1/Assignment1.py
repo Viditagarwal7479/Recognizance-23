@@ -33,8 +33,8 @@ def word_is_palindrome(string):
     for i in range(0,int(len(string)/2)):
         if str[i]!=str[len(string)-i-1]:
             flag = False
-            else:
-                flag = true
+        else:
+            flag = true
       
          
     return flag
