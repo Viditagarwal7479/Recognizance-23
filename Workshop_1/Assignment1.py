@@ -30,11 +30,14 @@ def word_is_palindrome(string):
         flag = True
     """
 
-    for i in range(0,int(len(string)/2)):
-        if str[i]!=str[len(string)-i-1]:
-            flag = False
+    x=len(string)
+    for i in range(x):
+        if string[i]==string{x-i-1]:
+                             flag=True
         else:
-            flag = true
+                             flag=False
+                             
+                             
       
          
     return flag
@@ -93,10 +96,10 @@ def even_sort(arr):
     arr.sort()
     for i in range(len(arr)):
         for t in range(len(arr)-i):
-            if arr[t]%2 !=0 and arr[j+1]%2 ==0:
-                z=arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1]=z
+            if arr[t]%2 !=0 and arr[t+1]%2 ==0:
+                z=arr[t]
+                arr[t] = arr[t+1]
+                arr[t+1]=z
     
     
     return arr
@@ -182,13 +185,13 @@ def is_leap_year(year):
     """
 
     # Code Here
-    if num%100==0:
-        if num%400==0:
+    if year%100==0:
+        if year%400==0:
             flag=True
         else:
             flag=False
     else:
-        if num%4:
+        if year%4:
             flag = True
         else:
             flag = False
