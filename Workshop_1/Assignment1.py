@@ -32,7 +32,7 @@ def word_is_palindrome(string):
 
     x=len(string)
     for i in range(x):
-        if string[i]==string{x-i-1]:
+        if string[i]==string[x-i-1]:
                              flag=True
         else:
                              flag=False
