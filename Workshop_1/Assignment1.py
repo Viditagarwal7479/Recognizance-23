@@ -13,7 +13,8 @@ def square(x):
     """
 
     # Code Here
-    return None
+    y = x*x
+    return y
 
 
 def word_is_palindrome(string):
@@ -31,7 +32,13 @@ def word_is_palindrome(string):
     """
 
     # Code Here
-    return None
+    x = len(string)
+    for i in range(x):
+        if string[i] == string[x-1-i]:
+            flag = True
+        else:
+            flag = False
+    return flag
 
 
 def sqrt_of_numbers(num):
@@ -48,9 +55,8 @@ def sqrt_of_numbers(num):
     """
     if num < 0:
         raise ValueError('Number must be positive')
-
-    # Code Here
-    return None
+    else:
+        return round(pow(num, 0.5),2)
 
 
 def Maximum(arr):
@@ -68,7 +74,8 @@ def Maximum(arr):
     """
 
     # Code Here
-    return None, None
+    arr.sort()
+    return arr[-1], arr[-2]
 
 
 def even_sort(arr):
@@ -86,6 +93,14 @@ def even_sort(arr):
     """
 
     # Code Here
+    arr.sort()
+    for i in range(len(arr)):
+        for j in range(len(arr)-1-i):
+            if arr[j]%2 != 0 and arr[j+1]%2 == 0:
+                t = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = t
+    return arr
     return None
 
 
@@ -105,9 +120,9 @@ def eqn_solver(A, B, C):
     returns:
         x, y (float, float)
     """
-
-    # Code Here
-    return None, None
+    y = ((A[0]*C[1] - A[1]*C[0])/(A[0]*B[1] - A[1]*B[0]))
+    x = ((B[0]*C[1] - B[1]*C[0])/(B[0]*A[1] - B[1]*A[0]))
+    return x, y 
 
 
 def swap_case(string):
@@ -124,7 +139,16 @@ def swap_case(string):
     """
 
     # Code Here
-    return None
+    a = ""
+    l = len(string)
+    for i in range(l):
+        if string[i].isupper():
+            a = a + string[i].lower()
+        elif string[i].islower():
+            a = a + string[i].upper()
+        else:
+            a = a + string[i]
+    return a
 
 
 def is_prime(num):
@@ -137,7 +161,15 @@ def is_prime(num):
     """
 
     # Code Here
-    return None
+    flag = True
+    if num == 1:
+        flag = False
+    elif num > 1:
+        for i in range(2, num):
+            if (num % i) == 0:
+                flag = False
+                break
+    return flag
 
 
 def is_leap_year(year):
@@ -150,7 +182,10 @@ def is_leap_year(year):
     """
 
     # Code Here
-    return None
+    flag = False
+    if (year%4 == 0 and year%100 != 0) or year%400 == 0:
+        flag = True
+    return flag
 
 
 def is_perfect_square(num):
@@ -163,7 +198,12 @@ def is_perfect_square(num):
     """
 
     # Code Here
-    return None
+    flag = False
+    if int(pow(num, 0.5)) - pow(num, 0.5) == 0:
+        flag = True
+
+    # Code Here
+    return flag
 
 
 def is_perfect_number(num):
@@ -179,14 +219,20 @@ def is_perfect_number(num):
         num = 6
         ## then
         flag = True
-
         num = 7
         ## then
         flag = False
     """
 
     # Code Here
-    return None
+    flag = False
+    a = []
+    for i in range(1,num):
+        if num%i == 0:
+            a.append(i)
+    if sum(a) == num:
+        flag = True
+    return flag
 
 
 def resize_array(a):
@@ -203,7 +249,9 @@ def resize_array(a):
     """
 
     # Code Here
-    return None
+    import numpy as np
+    b = np.array(a)
+    return b.reshape(2,3)
 
 
 def reverse_step_array(a):
@@ -220,7 +268,7 @@ def reverse_step_array(a):
     """
 
     # Code Here
-    return None
+    return a[::-3]
 
 
 def reverse_words(string):
@@ -237,7 +285,14 @@ def reverse_words(string):
     """
 
     # Code Here
-    return None
+    a =[]
+    s = ""
+    a = string.split(' ')
+    for i in range(len(a)):
+        s =  s + " " + a[-1]
+        a.pop(-1)
+        
+    return s.strip()
 
 
 def count_characters(string):
@@ -253,8 +308,16 @@ def count_characters(string):
         dict = {'H': 1, 'e': 1, 'l': 3, 'o': 2, 'W': 1, 'r': 1, 'd': 1}
     """
 
-    # Code Here
-    return None
+    all_freq = {}
+    for i in string:
+        if i in all_freq:
+            all_freq[i] += 1
+        else:
+            all_freq[i] = 1
+    if ' ' in all_freq.keys():
+        del all_freq[' ']
+    
+    return all_freq
 
 
 def remove_special_characters(string):
@@ -270,8 +333,13 @@ def remove_special_characters(string):
         str = 'Hello World 123 th15 1s 4 t35t str1ng'
     """
 
-    # Code Here
-    return None
+    sample = []
+    for i in range(len(string)):
+        if string[i].isupper() or string[i].islower() or string[i].isdigit() or string[i] == ' ':
+            sample.append(string[i])
+        ns = "".join(sample)
+    
+    return ns
 
 
 def sort_tuple_of_tuples(input_tuple):
@@ -287,8 +355,18 @@ def sort_tuple_of_tuples(input_tuple):
         input_tuple: (('z', 1), ('w', 19), ('f', 37), ('a', 55))
     """
 
-    # Code Here
-    return None
+    l = []
+    for i in range(len(input_tuple)):
+        l.append(input_tuple[i])
+
+    for i in range(len(input_tuple)-1):
+        for j in range(0,len(input_tuple) - i -1):
+            if l[j][1] > l[j+1][1]:
+                t = l[j]
+                l[j] = l[j+1]
+                l[j+1] = t
+            
+    return tuple(l)
 
 
 def alpha_numeric_words(string):
@@ -304,8 +382,13 @@ def alpha_numeric_words(string):
         string: "there33 how11 you1"
     """
 
-    # Code Here
-    return None
+    res = []
+    temp = string.split()
+    for idx in temp:
+        if any(chr.isalpha() for chr in idx) and any(chr.isdigit() for chr in idx):
+            res.append(idx)
+    return ' '.join(res)
+
 
 
 def count_them_all(string):
@@ -321,8 +404,18 @@ def count_them_all(string):
         dict: {'Characters': 7, 'Numbers': 4, 'Symbols': 4}
     """
 
-    # Code Here
-    return None
+    d = 0
+    c = 0
+    s = 0
+    for i in range(len(string)):
+        if string[i].isdigit():
+            d = d+1
+        elif string[i].isupper() or string[i].islower():
+            c = c+1
+        elif string[i] != ' ':
+            s = s+1
+    r = {'Characters': c, 'Numbers': d, 'Symbols': s}
+    return r
 
 
 def hash_supremacy(string):
@@ -338,5 +431,10 @@ def hash_supremacy(string):
         string: "#He was a### great #guy"
     """
 
-    # Code Here
-    return None
+    a =""
+    for i in range(len(string)):
+        if string[i].isdigit() or string[i].isupper() or string[i].islower() or string[i] == ' ':
+            a = a + string[i]
+        else:
+            a = a + "#"   
+    return a
