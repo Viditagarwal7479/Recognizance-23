@@ -231,15 +231,15 @@ def is_perfect_number(num):
     """
 
     # Code Here
-     sum =0
-     for i in range(1,num):
+    sum =0
+    for i in range(1,num):
         if num%i==0:
             sum+=i
-     if sum==num:
+    if sum==num:
         flag = True
-     else:
+    else:
         flag = False
-     return flag
+    return flag
 
 
 def resize_array(a):
