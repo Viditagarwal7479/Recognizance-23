@@ -92,7 +92,7 @@ def even_sort(arr):
     """
     arr.sort()
     for i in range(len(arr)):
-        for t in range(len(arr)_1-i):
+        for t in range(len(arr)-i):
             if arr[t]%2 !=0 and arr[j+1]%2 ==0:
             z=arr[j]
             arr[j] = arr[j+1]
